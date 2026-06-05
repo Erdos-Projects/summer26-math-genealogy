@@ -12,7 +12,7 @@ We scraped records from the [Mathematics Genealogy Project](https://www.mathgene
 
 The two records that initially produced fetching errors were later manually retrieved and added to the dataset.
 
-For scrapping we used a slightly modified version of the script given in https://github.com/j2kun/math-genealogy-scraper.git. The modified code can be found in `src/data/scraper`
+For scrapping we used a slightly modified version of the script given in https://github.com/j2kun/math-genealogy-scraper.git. The modified code can be found in `src/data/scraper`.
 
 ## Initial Data Cleaning
 
