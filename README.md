@@ -4,7 +4,7 @@ This repository contains the data and analysis for the Summer 2026 Mathematics G
 
 ## Data Scraping
 
-We scraped records from the [Mathematics Genealogy Project](https://www.mathgenealogy.org/) and saved the results in `new-data/raw/data-new.json`.
+We scraped records from the [Mathematics Genealogy Project](https://www.mathgenealogy.org/) and saved the results in `data/raw/data-new.json`.
 
 * Original scraped records: **338,530**
 * Approximate JSON file size: **129.9 MB**
