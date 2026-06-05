@@ -2,6 +2,8 @@
 
 This repository contains the data and analysis for the Summer 2026 Mathematics Genealogy Project team project.
 
+## Problem Statement
+
 ## Data Scraping
 
 We scraped records from the [Mathematics Genealogy Project](https://www.mathgenealogy.org/) and saved the results in `data/raw/data-new.json`.
