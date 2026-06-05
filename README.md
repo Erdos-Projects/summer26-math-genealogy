@@ -4,7 +4,7 @@ This repository contains the data and analysis for the Summer 2026 Mathematics G
 
 ## Data Scraping
 
-We scraped records from the [Mathematics Genealogy Project](https://www.mathgenealogy.org/) and saved the results in `new-data/data-new.json`.
+We scraped records from the [Mathematics Genealogy Project](https://www.mathgenealogy.org/) and saved the results in `new-data/raw/data-new.json`.
 
 * Original scraped records: **338,530**
 * Approximate JSON file size: **129.9 MB**
@@ -12,7 +12,7 @@ We scraped records from the [Mathematics Genealogy Project](https://www.mathgene
 
 The two records that initially produced fetching errors were later manually retrieved and added to the dataset.
 
-For scrapping we used a slightly modified version of the script given in https://github.com/j2kun/math-genealogy-scraper.git. The modified code can be found in src/data/scraper
+For scrapping we used a slightly modified version of the script given in https://github.com/j2kun/math-genealogy-scraper.git. The modified code can be found in `src/data/scraper`
 
 ## Initial Data Cleaning
 
@@ -57,7 +57,7 @@ The `advisors` and `students` columns are always present, although their values 
 
 ## Missing-Data Analysis
 
-<img width="2085" height="901" alt="Missing-data matrix for the cleaned Mathematics Genealogy Project dataset" src="https://github.com/user-attachments/assets/a4f6920f-9325-4ca1-91bf-c19c0f7ee21f" />
+<img width="2085" height="901" alt="image" src="https://github.com/user-attachments/assets/953eac7f-7930-4871-9ffe-83d8c78e2068" />
 
 Initial observations include:
 
