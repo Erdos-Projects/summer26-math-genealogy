@@ -4,7 +4,8 @@ This repository contains the data and analysis for the Summer 2026 Mathematics G
 
 ## Problem Statement
 
-
+1. Study the trend of mathematics in a given field
+2. Predict to the research subject (MSC code) of a mathematician depending on their descendants/relatives.
 
 ## Data Scraping
 
