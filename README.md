@@ -62,7 +62,8 @@ The `advisors` and `students` columns are always present, although their values 
 
 ## Missing-Data Analysis
 
-<img width="2085" height="901" alt="image" src="https://github.com/user-attachments/assets/953eac7f-7930-4871-9ffe-83d8c78e2068" />
+<img width="2085" height="901" alt="image" src="https://github.com/user-attachments/assets/953eac7f-7930-4871-9ffe-83d8c78e2068" /> <img width="1417" height="1180" alt="image" src="https://github.com/user-attachments/assets/e8300458-64a9-4d95-8ad7-648598da0f36" />
+
 
 Initial observations include:
 
