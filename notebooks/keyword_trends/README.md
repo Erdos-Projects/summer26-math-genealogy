@@ -1,6 +1,5 @@
 # Keyword Trends
 
-**Owner:** Aaroodd
 
 ## Question
 
