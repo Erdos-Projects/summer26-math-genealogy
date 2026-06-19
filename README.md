@@ -117,7 +117,23 @@ Used StratifiedKFold for a 3-fold cross validation of all the models and F1 Macr
 
 Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that c=0.1 gives the best fit.
 
-### 2. Key words trend 
+### 2. Keyword Trends - 
+
+**Question:**
+Within each subject, which thesis-title keywords are rising, and can we predict which will keep trending?
+
+**Idea:** 
+New terminology tends to appear in thesis titles before a topic grows large. By tracking each word's yearly usage share within a subject, we can flag words with a low historical base and a steep recent rise, then forecast their near-future share.
+
+**Approach:**
+- Tokenize thesis titles per subject and compute each word's share of titles per year
+- Detect rising words from their recent trend (slope on a low base)
+- Frame forecasting as predicting next-year share from lagged usage features
+
+**Modeling and evaluation:**
+Baseline is linear regression on lag features. Because this is a time series, the main risk is temporal leakage, so we use a custom time-based split (train on past years, test on future years) rather than a random split.
+
+More details and notrbooks in [notebooks/keyword_trends](notebooks/keyword_trends)
  
 ### 3. Subject trend 
 
