@@ -35,28 +35,25 @@ Each record contains the following fields:
 
 During the initial cleaning process, we:
 
-* manually added the two records that produced fetching errors;
-* removed six records with missing names; and
-* identified seven records with clearly incorrect years:
+* manually added the two records missed from web scraping;
+* Fixed 1456 entries with Student/advisor mismatches due to data fetching;
+* identified seven records with incorrect years and six records with missing names
 
-  * four caused by scraping or parsing errors;
-  * three appearing to originate from the MGP database.
-
-After this initial cleaning, the dataset contains **338,526 records**.
+After this initial cleaning, the dataset contains **338,532 records**.
 
 ## Dataset Summary
 
 | Column     | Data type | Non-null entries | Missing entries | Completeness |
 | ---------- | --------: | ---------------: | --------------: | -----------: |
-| `id`       |   integer |          338,526 |               0 |       100.0% |
+| `id`       |   integer |          338,532 |               0 |       100.0% |
 | `name`     |    string |          338,526 |               0 |       100.0% |
-| `thesis`   |    string |          307,399 |          31,127 |        90.8% |
-| `school`   |    string |          281,805 |          56,721 |        83.2% |
+| `thesis`   |    string |          307,400 |          31,127 |        90.8% |
+| `school`   |    string |          281,806 |          56,721 |        83.2% |
 | `country`  |    string |          322,986 |          15,540 |        95.4% |
-| `year`     |     float |          277,236 |          61,290 |        81.9% |
+| `year`     |     float |          277,237 |          61,290 |        81.9% |
 | `subject`  |    string |          202,492 |         136,034 |        59.8% |
-| `advisors` |      list |          338,526 |               0 |       100.0% |
-| `students` |      list |          338,526 |               0 |       100.0% |
+| `advisors` |      list |          338,532 |               0 |       100.0% |
+| `students` |      list |          338,532 |               0 |       100.0% |
 
 The `advisors` and `students` columns are always present, although their values may be empty lists.
 
