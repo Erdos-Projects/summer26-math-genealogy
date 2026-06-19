@@ -108,7 +108,10 @@ Following models were selected for the initial evaluation.
 
 Used StratifiedKFold for a 3-fold cross validation of all the models and F1 Macro for model selection (this metric is used as the subjects (codes/names) are imbalanced). 
 
-Results from the 
+<img width="1301" height="177" alt="image" src="https://github.com/user-attachments/assets/aef65fb6-d718-4969-9331-f37a56c1989a" />
+
+Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that c=0.1 gives the best fit.
+
 ### 2. Key words trend 
  
 ### 3. Subject trend 
