@@ -47,11 +47,11 @@ After this initial cleaning, the dataset contains **338,532 records**.
 | ---------- | --------: | ---------------: | --------------: | -----------: |
 | `id`       |   integer |          338,532 |               0 |       100.0% |
 | `name`     |    string |          338,526 |               6 |       100.0% |
-| `thesis`   |    string |          307,400 |          31,127 |        90.8% |
-| `school`   |    string |          281,806 |          56,721 |        83.2% |
-| `country`  |    string |          322,986 |          15,540 |        95.4% |
-| `year`     |     float |          277,237 |          61,290 |        81.9% |
-| `subject`  |    string |          202,492 |         136,034 |        59.8% |
+| `thesis`   |    string |          307,400 |          31,132 |        90.8% |
+| `school`   |    string |          281,806 |          56,726 |        83.2% |
+| `country`  |    string |          322,986 |          15,546 |        95.4% |
+| `year`     |     float |          277,237 |          61,295 |        81.9% |
+| `subject`  |    string |          202,492 |         136,040 |        59.8% |
 | `advisors` |      list |          338,532 |               0 |       100.0% |
 | `students` |      list |          338,532 |               0 |       100.0% |
 
