@@ -46,7 +46,7 @@ After this initial cleaning, the dataset contains **338,532 records**.
 | Column     | Data type | Non-null entries | Missing entries | Completeness |
 | ---------- | --------: | ---------------: | --------------: | -----------: |
 | `id`       |   integer |          338,532 |               0 |       100.0% |
-| `name`     |    string |          338,526 |               0 |       100.0% |
+| `name`     |    string |          338,526 |               6 |       100.0% |
 | `thesis`   |    string |          307,400 |          31,127 |        90.8% |
 | `school`   |    string |          281,806 |          56,721 |        83.2% |
 | `country`  |    string |          322,986 |          15,540 |        95.4% |
