@@ -68,6 +68,8 @@ Initial observations include:
 2. Records from earlier periods are more likely to have missing `subject` values.
 3. Records with missing `year` values are also more likely to have missing `country` and `thesis` values.
 
+Also, many students entry are empty because most mathematicians have no students (may also due to missing data).
+
 ## Basic Analysis of Student Counts
 
 The number of listed students per mathematician has the following summary:
