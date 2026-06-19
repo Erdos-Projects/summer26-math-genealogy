@@ -43,17 +43,20 @@ After this initial cleaning, the dataset contains **338,532 records**.
 
 ## Dataset Summary
 
-| Column     | Data type | Non-null entries | Missing entries | Completeness |
-| ---------- | --------: | ---------------: | --------------: | -----------: |
-| `id`       |   integer |          338,532 |               0 |       100.0% |
-| `name`     |    string |          338,526 |               6 |       100.0% |
-| `thesis`   |    string |          307,400 |          31,132 |        90.8% |
-| `school`   |    string |          281,806 |          56,726 |        83.2% |
-| `country`  |    string |          322,986 |          15,546 |        95.4% |
-| `year`     |     float |          277,237 |          61,295 |        81.9% |
-| `subject`  |    string |          202,492 |         136,040 |        59.8% |
-| `advisors` |      list |          338,532 |               0 |       100.0% |
-| `students` |      list |          338,532 |               0 |       100.0% |
+| Column                          | Data type | Non-null entries | Missing entries | Completeness |
+| ------------------------------- | --------: | ---------------: | --------------: | -----------: |
+| `id`                            |   integer |          338,532 |               0 |       100.0% |
+| `name`                          |    string |          338,526 |               6 |       100.0% |
+| `thesis`                        |    string |          307,399 |          31,133 |        90.8% |
+| `school`                        |    string |          276,167 |          62,365 |        81.6% |
+| `country`                       |    string |          322,986 |          15,546 |        95.4% |
+| `year`                          |     float |          277,237 |          61,295 |        81.9% |
+| `subject_code`                  |    string |          302,106 |          36,426 |        89.2% |
+| `subject_name`                  |    string |          302,106 |          36,426 |        89.2% |
+| `predicted_subject_code`        |    string |          133,502 |         205,030 |        39.4% |
+| `subject_prediction_confidence` |     float |          136,040 |         202,492 |        40.2% |
+| `advisors`                      |      list |          312,066 |          26,466 |        92.2% |
+| `students`                      |      list |           82,914 |         255,618 |        24.5% |
 
 The `advisors` and `students` columns are always present, although their values may be empty lists (see below).
 
