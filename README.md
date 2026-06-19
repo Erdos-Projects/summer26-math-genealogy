@@ -36,10 +36,12 @@ Each record contains the following fields:
 During the initial cleaning process, we:
 
 * manually added the two records missed from fetching errors;
-* Fixed 1456 entries with Student/advisor mismatches;
+* fixed 1,456 entries with student/advisor mismatches;
 * identified seven records with incorrect years and six records with missing names.
 
 After this initial cleaning, the dataset contains **338,532 records**.
+
+For records missing a `subject` field (136,040 entries, 40.2% of the dataset), we assigned subjects using a classifier, adding two new fields: `predicted_subject_code` and `subject_prediction_confidence`. This expanded subject coverage from 59.8% to 89.2% of all records.
 
 ## Dataset Summary
 
