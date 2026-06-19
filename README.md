@@ -98,7 +98,17 @@ Based on the analysis above, we propose the following four problems/questions:
 4. How are the subject topics discributed in US states? - Jon
 
 ### 1. Missing code 
+The dataset had 136,040 entries with subject missing. The following missing value imputation procedure has been taken to decrease the number of entries with missing subjects. Every subject comes with a subject code (varying between 0 and 97) and subject name. 
 
+Following models were selected for the initial evaluation. 
+   - LogisticRegression
+   - DecisionTreeClassifier
+   - RandomForestClassifier
+   - LinearSVC
+
+Used StratifiedKFold for a 3-fold cross validation of all the models and F1 Macro for model selection (this metric is used as the subjects (codes/names) are imbalanced). 
+
+Results from the 
 ### 2. Key words trend 
  
 ### 3. Subject trend 
