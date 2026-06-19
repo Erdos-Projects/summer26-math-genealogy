@@ -7,7 +7,7 @@ This repository contains the data and analysis for the Summer 2026 Mathematics G
 1. Study the trend of mathematics in a given field
 2. Predict the research subject (MSC code) of a mathematician depending on their descendants/relatives.
 
-## Data Scraping
+## Data Scraping (see folder src)
 
 We scraped records from the [Mathematics Genealogy Project](https://www.mathgenealogy.org/) and saved the results in `data/raw/data-new.json`.
 
@@ -19,7 +19,7 @@ The two records that initially produced fetching errors were later manually retr
 
 For scrapping we used a slightly modified version of the script given in https://github.com/j2kun/math-genealogy-scraper.git. The modified code can be found in `src/data/scraper`.
 
-## Initial Data Cleaning
+## Initial Data Cleaning (see folder notebooks)
 
 Each record contains the following fields:
 
@@ -35,9 +35,9 @@ Each record contains the following fields:
 
 During the initial cleaning process, we:
 
-* manually added the two records missed from web scraping;
-* Fixed 1456 entries with Student/advisor mismatches due to data fetching;
-* identified seven records with incorrect years and six records with missing names
+* manually added the two records missed from fetching errors;
+* Fixed 1456 entries with Student/advisor mismatches;
+* identified seven records with incorrect years and six records with missing names.
 
 After this initial cleaning, the dataset contains **338,532 records**.
 
@@ -55,7 +55,7 @@ After this initial cleaning, the dataset contains **338,532 records**.
 | `advisors` |      list |          338,532 |               0 |       100.0% |
 | `students` |      list |          338,532 |               0 |       100.0% |
 
-The `advisors` and `students` columns are always present, although their values may be empty lists.
+The `advisors` and `students` columns are always present, although their values may be empty lists (see below).
 
 ## Missing-Data Analysis
 
@@ -68,7 +68,7 @@ Initial observations include:
 2. Records from earlier periods are more likely to have missing `subject` values.
 3. Records with missing `year` values are also more likely to have missing `country` and `thesis` values.
 
-Also, many students entry are empty because most mathematicians have no students (may also due to missing data).
+Also, many `students` entries are empty, but that is probably due to the fact that most mathematicians have no students.
 
 ## Basic Analysis of Student Counts
 
@@ -84,3 +84,23 @@ The number of listed students per mathematician has the following summary:
 | Mathematicians with two listed students |  3.8% |
 
 The distribution is highly right-skewed: most mathematicians have no listed students, while a small number have very large numbers of students.
+
+(may add a few more analysis here if needed)
+
+## Project Proposal
+Based on the analysis above, we propose the following four problems/questions:
+1. How to fill in the missing subject code? - Osanda
+
+2. What is the trend of key words in each subject for the next year/decade? - Aaroodd 
+
+3. Which subject will be the next “dominating” subject? - Yilong
+
+4. How are the subject topics discributed in US states? - Jon
+
+### 1. Missing code 
+
+### 2. Key words trend 
+ 
+### 3. Subject trend 
+
+### 4. Geography analysis 
