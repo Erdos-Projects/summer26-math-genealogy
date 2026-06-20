@@ -102,7 +102,7 @@ Based on the analysis above, we propose the following four problems/questions:
 
 4. How are the subject topics discributed in US states? - Jon
 
-### 1. Missing code 
+### 1. Missing Subject Codes/Names Imputation 
 The dataset had 136,040 entries with subject missing. The following missing value imputation procedure has been taken to decrease the number of entries with missing subjects. Every subject comes with a subject code (varying between 0 and 97) and subject name. 
 
 First, every ID in the dataset either have ancestors or descendants. The subject code/name can be connected upto some extend based on these connections. For some IDs this doesn't work as the subject codes of ancestors or descendants are missing. Therefore, a subject code prediction based on the key words in thesis title was carried out. 
