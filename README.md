@@ -105,17 +105,22 @@ Based on the analysis above, we propose the following four problems/questions:
 ### 1. Missing code 
 The dataset had 136,040 entries with subject missing. The following missing value imputation procedure has been taken to decrease the number of entries with missing subjects. Every subject comes with a subject code (varying between 0 and 97) and subject name. 
 
+First, every ID in the dataset either have ancestors or descendants. The subject code/name can be connected upto some extend based on these connections. For some IDs this doesn't work as the subject codes of ancestors or descendants are missing. Therefore, a subject code prediction based on the key words in thesis title was carried out. 
+
 Following models were selected for the initial evaluation. 
    - LogisticRegression
    - DecisionTreeClassifier
    - RandomForestClassifier
    - LinearSVC
 
-Used StratifiedKFold for a 3-fold cross validation of all the models and F1 Macro for model selection (this metric is used as the subjects (codes/names) are imbalanced). 
+Pipelines were created using TfidVectorizer and these models. Used StratifiedKFold for a 3-fold cross validation of all the models and F1 Macro for model selection (this metric is used as the subjects (codes/names) are imbalanced). 
 
 <img width="1301" height="177" alt="image" src="https://github.com/user-attachments/assets/aef65fb6-d718-4969-9331-f37a56c1989a" />
 
-Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that c=0.1 gives the best fit.
+Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that c=0.1 gives the best fit (train accuracy = 76.07% test accuracy = 63.34%). Only the subject codes with predication confidence score greater than or equal to 0.55 were kept. For the calculation of confidence score a weight was given for subject codes based on the ones of descendants and ancestors and prediction probabilities coming from the model fit.  
+
+Repeated the same process for the new dataset to fill in more missing values. The best model with best accuracy and f1 macro after hyperparameter tuning was LogisticRegression. (More details about this 
+
 
 ### 2. Keyword Trends - 
 
