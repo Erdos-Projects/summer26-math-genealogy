@@ -94,15 +94,15 @@ The distribution is highly right-skewed: most mathematicians have no listed stud
 
 ## Project Proposal
 Based on the analysis above, we propose the following four problems/questions:
-1. How to fill in the missing subject code? - Osanda
+I. How to fill in the missing subject code? - Osanda
 
-2. What is the trend of key words in each subject for the next year/decade? - Aaroodd 
+II. What is the trend of key words in each subject for the next year/decade? - Aaroodd 
 
-3. Which subject will be the next “dominating” subject? - Yilong
+III. Which subject will be the next “dominating” subject? - Yilong
 
-4. How are the subject topics discributed in US states? - Jon
+IV. How are the subject topics discributed in US states? - Jon
 
-### 1. Missing Subject Codes/Names Imputation 
+### Project I. Missing Subject Codes/Names Imputation 
 The dataset had 136,040 entries with subject missing. The following missing value imputation procedure has been taken to decrease the number of entries with missing subjects. Every subject comes with a subject code (varying between 0 and 97) and subject name. 
 
 First, every ID in the dataset either have ancestors or descendants. The subject code/name can be connected upto some extend based on these connections. For some IDs this doesn't work as the subject codes of ancestors or descendants are missing. Therefore, a subject code prediction based on the key words in thesis title was carried out. 
@@ -122,7 +122,7 @@ Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that 
 Repeated the same process for the new dataset to fill in more missing values. The best model with best accuracy and f1 macro after hyperparameter tuning was LogisticRegression. (More details : [notebook/fill-in-subject-Osanda](notebooks/fill-in-subject-Osanda))
 
 
-### 2. Keyword Trends - 
+### Project II. Keyword Trends - 
 
 **Question:**
 Within each subject, which thesis-title keywords are rising, and can we predict which will keep trending?
@@ -140,6 +140,14 @@ Baseline is linear regression on lag features. Because this is a time series, th
 
 More details and notrbooks in [notebooks/keyword_trends](notebooks/keyword_trends)
  
-### 3. Subject trend 
+### Project III. Subject Evolution
 
-### 4. Geography analysis 
+One direction of this project is to study the long-term evolution of mathematical research subjects in the Mathematics Genealogy Project. Instead of only asking which subjects have the largest raw number of students, we aim to understand how subjects emerge, become dominant, decline, and interact with one another through academic genealogy. 
+
+First, we will analyze _subject dominance_ over time. For each year, we plan to compute the proportion of mathematicians belonging to each `subject` and use these proportions to study changes in subject rankings. Possible outputs include a subject-share heatmap, rankings of the most common subjects by decade, top-10 subject turnover across decades, and entropy-based measures of subject diversity. 
+
+Second, we will study _subject life cycles_. For each `subject`, we plan to estimate an emergence year, peak year, recent momentum, decline ratio, and general status. Possible outputs include a life-cycle table for all MSC subjects, a birth-versus-peak-year scatterplot, and rankings of rising and declining subjects. 
+
+Third, we will use the advisor-student structure of the dataset to study _genealogical transmission_ between subjects. We plan to construct a $63 \times 63$ transition matrix, where each entry measures how often advisors in one subject produce students in another subject. This can also be computed over different time windows to see how field transitions change historically. From this matrix, we can compute self-retention rankings, net inflow and outflow rankings, top migration flows between subjects, and persistence of subjects across multiple generations. 
+
+### Project IV. Geography analysis 
