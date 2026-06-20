@@ -117,9 +117,9 @@ Pipelines were created using TfidVectorizer and these models. Used StratifiedKFo
 
 <img width="1301" height="177" alt="image" src="https://github.com/user-attachments/assets/aef65fb6-d718-4969-9331-f37a56c1989a" />
 
-Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that c=0.1 gives the best fit (train accuracy = 76.07% test accuracy = 63.34%). Only the subject codes with predication confidence score greater than or equal to 0.55 were kept. For the calculation of confidence score a weight was given for subject codes based on the ones of descendants and ancestors and prediction probabilities coming from the model fit.  
+Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that c=0.1 gives the best fit (train accuracy = 76.07% test accuracy = 63.34%). Only the subject codes with predication confidence score greater than or equal to 0.55 were kept. For the calculation of confidence score a weight was given for subject codes connected to the ones of descendants and ancestors and prediction probabilities coming from the model fit.  
 
-Repeated the same process for the new dataset to fill in more missing values. The best model with best accuracy and f1 macro after hyperparameter tuning was LogisticRegression. (More details about this 
+Repeated the same process for the new dataset to fill in more missing values. The best model with best accuracy and f1 macro after hyperparameter tuning was LogisticRegression. (More details : [notebook](notebooks/fill-in-subject-Osanda)
 
 
 ### 2. Keyword Trends - 
