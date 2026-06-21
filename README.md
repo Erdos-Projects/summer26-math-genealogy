@@ -60,7 +60,8 @@ For records missing a `subject` field (136,040 entries, 40.2% of the dataset), w
 | `advisors`                      |      list |          312,066 |          26,466 |        92.2% |
 | `students`                      |      list |           82,914 |         255,618 |        24.5% |
 
-The `advisors` and `students` columns are always present, although their values may be empty lists (see below).
+Note that many `students` entries are empty, but this should be interpreted as the fact that most mathematicians have no students.
+
 
 ## Missing-Data Analysis
 
@@ -72,8 +73,6 @@ Initial observations include:
 1. Missing `year` values are strongly associated with missing `school` values.
 2. Records from earlier periods are more likely to have missing `subject` values.
 3. Records with missing `year` values are also more likely to have missing `country` and `thesis` values.
-
-Also, many `students` entries are empty, but that is probably due to the fact that most mathematicians have no students.
 
 ## Basic Analysis of Student Counts
 
