@@ -60,13 +60,11 @@ For records missing a `subject` field (136,040 entries, 40.2% of the dataset), w
 | `advisors`                      |      list |          312,066 |          26,466 |        92.2% |
 | `students`                      |      list |           82,914 |         255,618 |        24.5% |
 
-Note that many `students` entries are empty, but this should be interpreted as the fact that most mathematicians have no students.
+Note that many `students` entries are missing, but this should be interpreted as the fact that most mathematicians have no students.
 
 
 ## Missing-Data Analysis
-
-<img width="1417" height="1180" alt="image" src="https://github.com/user-attachments/assets/e8300458-64a9-4d95-8ad7-648598da0f36" />
-
+<img width="1413" height="1180" alt="missing-data-analysis" src="https://github.com/user-attachments/assets/1a40540c-ce77-435d-b884-1eb2a927c89d" />
 
 Initial observations include:
 
