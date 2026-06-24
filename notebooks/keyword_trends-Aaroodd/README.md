@@ -50,12 +50,12 @@ two steps:
 **Modeling** (`model.ipynb`):
 - Features: share_lag1, share_lag2, share_lag3, slope_3yr, slope_5yr, specificity
 - Target: share at t+1
-- Split: train < 2013, test 2013-2022 (time-based, no random split)
+- Split: train < 2013, test 2013-2022 (time-based, no random split, try with different splits)
 - Baseline: naive lag-1 (predict next year = this year)
-- Models: Ridge regression (winner), GradientBoostingRegressor (marginal loss)
+- Preliminary models: Ridge regression (better), GradientBoostingRegressor (marginal loss)
 - Leakage check: shuffled-target RMSE >> model RMSE -- clean
-
-## Results
+- Later will try better models or improved features
+## Results (check notebook for up to date results)
 
 | Metric | Baseline (lag-1) | Ridge | GBR |
 |---|---|---|---|
@@ -66,7 +66,7 @@ two steps:
 - NDCG@all (test, per year): 0.958 mean
 - NDCG@5 (2024 holdout, 60 subjects): 0.858 mean
 - Direction accuracy (2024 holdout): 70.7%
-- 3 subjects excluded from 2024 evaluation: insufficient 2024 titles
+- 3 subjects excluded from 2024 evaluation: insufficient 2024 titles (different for different years)
 
 Key finding: Ridge beats GBR -- relationship is approximately linear. Lag features
 dominate (lag2 highest coefficient). slope_3yr adds signal; specificity does not
@@ -77,21 +77,18 @@ inflection points on declining words (privacy in CS).
 
 ## Status
 
-- [x] Tokenization with accent stripping, POS filter, bigrams
 - [x] Per-subject rising-word detection with specificity and enriched score
 - [x] Per-subject trend plots and cross-subject heatmap
-- [x] Feature engineering (lag + slope features)
+- [x] Features (lag + slope features)
 - [x] Ridge and GBR modeling with leakage check
 - [x] 2024 holdout evaluation (NDCG, direction accuracy, biggest misses)
 - [x] Watchlist saved to `data/watchlist_2024.csv`
-- [ ] Rerun build_parquets with bigrams (in progress -- deleted old pkl files)
-- [ ] Rerun EDA and modeling with bigram vocabulary
-- [ ] VAR model for correlated word clusters
-- [ ] ARIMA baseline comparison
+- [x] Rerun build_parquets with bigrams  
+- [x] Rerun EDA and modeling with bigram vocabulary
+- [ ] refining features (ideas?)
 
 ## Resuming later
 
-1. Check `build_parquets.ipynb` finished (sanity check cell shows bigram tokens)
-2. Rerun `eda.ipynb` from the multi-subject loop cell onwards
-3. Rerun `model.ipynb` from scratch with new vocabulary
-4. Compare NDCG with and without bigrams
+- []
+- []
+- [] 
