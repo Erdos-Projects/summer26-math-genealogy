@@ -12,24 +12,6 @@ version2_new_dataset_fitted.csv
 
 which contains both originally observed MSC subject codes and additional high-confidence predicted subject codes. The dataset has 338,532 total records. Among them, 280,203 records have a non-null `subject_code` after incorporating predicted subject information. The original-only subject subset has 202,492 records.
 
-The main relevant columns are:
-
-```text
-id
-name
-thesis
-school
-country
-year
-advisors
-students
-subject_code
-subject_name
-predicted_subject_code
-subject_prediction_confidence
-subject_prediction_vector
-```
-
 The analysis focuses on records with non-missing subject code and PhD year between 1900 and 2026.
 
 ## Pure vs. Applied Classification
@@ -70,14 +52,14 @@ The notebook produces several visualizations:
 2. **Top 10 recent subject trends**
    The top subjects are selected by average share over 2000–2025, then plotted as smoothed time series.
 
-3. **Stacked area charts
+3. **Stacked area charts**
 These show the changing composition of the major subject areas, with smaller subjects grouped into “Other.”
 
 A 5-year centered rolling average is used in several plots to smooth yearly fluctuations.
 
 ## Preliminary Findings
 
-We find for both pure and applied math, subject precentages changed drastically before 1960, and stablizes after 1960. This may due to the low number of Ph.D. students before 1960.
+We find for both pure and applied math, subject precentages changed drastically before 1960, and stablizes after 1960. This may due to the low number of Ph.D. students before 1960. Some sharp behavior near the final years should be interpreted cautiously because recent MGP data may be incomplete.
 
 ### Pure Math
 
@@ -97,7 +79,7 @@ The corresponding analysis using `data-new.json` gives a very similar top 10 lis
 This suggests that the high-confidence subject imputation does not substantially change the identity of the leading recent pure math subjects.
 
 
-The heatmap plot and stacked area chart show that several subjects rises in later 20th century: 60, 35, 03, 05; while the relative dominance of some early twentieth-century areas declines: 20, 51, 14, and some subjects are relatively stable: 11, 53. Some sharp behavior near the final years should be interpreted cautiously because recent MGP data may be incomplete and because some labels are model-imputed.
+The heatmap plot and stacked area chart show that several subjects rises in later 20th century: 60, 35, 03, 05; while the relative dominance of some early twentieth-century areas declines: 20, 51, 14, and some subjects are relatively stable: 11, 53. 
 
 ### Applied Math
 
