@@ -1,116 +1,158 @@
-# Subject Trend Analysis
+# Subject Trend Analysis and Forecasting
 
-This folder contains exploratory data analysis of subject trends in the Mathematics Genealogy Project dataset. The goal is to study how the distribution of PhD graduates across MSC subject areas changes over time, before moving to the advisor-student transition matrix analysis.
+This folder studies how the distribution of mathematics PhD graduates across MSC subject areas has changed over time. The analysis consists of three parts:
+
+1. exploratory analysis of historical subject trends;
+2. initial time-series modeling for Algebraic Geometry;
+3. time-series cross-validation for evaluating forecast stability.
+
+## Notebooks
+
+| Notebook                                           | Purpose                                                                                                  |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [`subject_EDA.ipynb`](subject_EDA.ipynb)           | Examines long-term changes in the counts and percentage shares of pure and applied mathematics subjects. |
+| [`subject_predict.ipynb`](subject_predict.ipynb)   | Fits several forecasting models to MSC subject 14, Algebraic Geometry.                                   |
+| [`cross_validation.ipynb`](cross_validation.ipynb) | Compares the models using rolling- and expanding-window time-series cross-validation.                    |
 
 ## Data
 
-The notebook uses the processed dataset
-
-```python
-version2_new_dataset_fitted.csv
-```
-
-which contains both originally observed MSC subject codes and additional high-confidence predicted subject codes. The dataset has 338,532 total records. Among them, 280,203 records have a non-null `subject_code` after incorporating predicted subject information. The original-only subject subset has 202,492 records.
-
-The analysis focuses on records with non-missing subject code and PhD year between 1900 and 2026.
-
-## Pure vs. Applied Classification
-
-For this preliminary analysis, MSC subject codes are separated into two broad groups:
+The notebooks use:
 
 ```text
-Pure math:    subject_code <= 60
-Applied math: subject_code >= 62
+data/processed/version2_new_dataset_fitted.csv
 ```
 
-This gives:
+The dataset contains 338,532 records, of which 280,203 have a non-null subject code after incorporating high-confidence predicted subject codes.
+
+For this preliminary analysis, subjects are divided into:
 
 ```text
-Pure math records, 1900–2026:    87,136
-Applied math records, 1900–2026: 142,294
+Pure mathematics:    subject_code <= 60
+Applied mathematics: subject_code >= 62
 ```
 
-Within each group, the notebook computes yearly subject shares. For example, in the pure math section, the percentage for subject code 14 in a given year is:
+For each subject and year, the notebooks calculate both:
 
-```text
-number of pure math PhD graduates with subject 14 in that year
-/
-total number of pure math PhD graduates in that year
-```
+* the number of PhD graduates;
+* the percentage of graduates within pure or applied mathematics.
 
-Thus, the pure math percentages sum to 100% within pure math, and the applied math percentages sum to 100% within applied math.
+Counts measure the absolute size of a subject, whereas percentages measure its relative position within the corresponding group.
 
-## Methods
+---
 
-For each group, the notebook computes a subject-by-year count matrix using `pd.crosstab`, where rows are MSC subject codes and columns are years. This count matrix is then normalized column-wise to obtain yearly percentage distributions.
+## 1. Exploratory Data Analysis
 
-The notebook produces several visualizations:
+The EDA notebook constructs subject-by-year count tables with `pd.crosstab` and normalizes them by yearly totals to obtain percentage shares. A centered five-year rolling average is used to reduce short-term variation.
 
-1. **Heatmaps of subject percentages over time**
-   These show how the full distribution of subject codes changes from 1900 to 2026.
+The main visualizations are:
 
-2. **Top 10 recent subject trends**
-   The top subjects are selected by average share over 2000–2025, then plotted as smoothed time series.
+* heatmaps of subject percentages from 1900 to 2026;
+* trend plots for the ten largest recent subjects;
+* stacked area charts showing changes in the overall subject distribution.
 
-3. **Stacked area charts**
-These show the changing composition of the major subject areas, with smaller subjects grouped into “Other.”
-
-A 5-year centered rolling average is used in several plots to smooth yearly fluctuations.
-
-## Preliminary Findings
-
-We find for both pure and applied math, subject precentages changed drastically before 1960, and stablizes after 1960. This may due to the low number of Ph.D. students before 1960. Some sharp behavior near the final years should be interpreted cautiously because recent MGP data may be incomplete.
-
-### Pure Math
-
-The top pure math subjects by recent average share, using the augmented dataset, are:
+The leading recent pure-mathematics subjects are:
 
 ```text
 60, 35, 11, 05, 14, 53, 37, 20, 03, 46
 ```
-which are Probability, PDE, number theory, combinatorics, algebraic geometry,differential geometry, dynamical systems, group theory, mathematical logic, and functional analysis/operator theory.
 
-The corresponding analysis using `data-new.json` gives a very similar top 10 list:
+These include Probability, PDE, Number Theory, Combinatorics, Algebraic Geometry, Differential Geometry, Dynamical Systems, Group Theory, Mathematical Logic, and Functional Analysis.
 
-```text
-60, 35, 05, 11, 14, 53, 37, 20, 03, 46
-```
+The pure-mathematics plots suggest later growth in subjects such as Probability, PDE, Logic, and Combinatorics, together with declining relative shares for some historically large subjects such as Group Theory and Algebraic Geometry.
 
-This suggests that the high-confidence subject imputation does not substantially change the identity of the leading recent pure math subjects.
-
-
-The heatmap plot and stacked area chart show that several subjects rises in later 20th century: 60, 35, 03, 05; while the relative dominance of some early twentieth-century areas declines: 20, 51, 14, and some subjects are relatively stable: 11, 53. 
-
-### Applied Math
-
-The top applied math subjects by recent average share are:
+The applied-mathematics distribution is increasingly dominated by:
 
 ```text
-68, 62, 91, 65, 90, 94, 92, 76, 93, 81
+68 — Computer Science
+62 — Statistics
 ```
 
-The applied math distribution is dominated in recent decades by 68-computer science and 62-statistics. Code 68 rises strongly in the late twentieth century and becomes the largest applied subject by 2020. Code 62 is also a major recent category. Earlier in the twentieth century, the applied distribution is more heavily influenced by other applied categories, including code 91 and 92.
+Overall, the applied distribution shifts toward computer science, statistics, numerical analysis, operations research, and related modern fields.
 
-The stacked area chart suggests a broad shift in applied mathematics from older applied/natural science categories toward statistics, computer science, numerical analysis, operations research, and related modern applied fields.
+Percentages fluctuate strongly before approximately 1960, partly because relatively few graduates are recorded in the early years. Changes near the end of the series should also be interpreted cautiously because recent MGP records may be incomplete.
 
+---
 
-## Next Steps
+## 2. Initial Forecasting Models
 
-The next stage is to move from subject-share trends to subject mutation analysis. The planned object is a sequence of decade-indexed transition matrices:
+The modeling notebook uses MSC subject 14, Algebraic Geometry, as a case study. It separately models:
+
+* annual graduate counts;
+* annual percentage shares within pure mathematics.
+
+Five models are fitted using a chronological training and testing split:
+
+1. simple exponential smoothing;
+2. double exponential smoothing;
+3. linear trend;
+4. ARIMA(0,0,2);
+5. Auto ARIMA.
+
+For the single holdout period, Auto ARIMA gives the lowest count MSE:
+
+| Best count model |    MSE |
+| ---------------- | -----: |
+| Auto ARIMA       | 558.55 |
+
+Double exponential smoothing gives the lowest percentage-share MSE:
+
+| Best share model             |   MSE |
+| ---------------------------- | ----: |
+| Double exponential smoothing | 0.934 |
+
+These results show that counts and percentages may favor different models. However, one holdout period is not sufficient for reliable model selection, since the ranking may depend strongly on the selected test years.
+
+---
+
+## 3. Time-Series Cross-Validation
+
+The cross-validation notebook evaluates the models over multiple historical forecasting periods while preserving chronological order. The model set is expanded to six specifications:
 
 ```text
-M(t)_{ij} = number of advisor-student edges in decade t
-            where the advisor has subject i and the student has subject j
+Simple exponential smoothing
+Holt optimized
+Holt damped
+Linear trend
+ARIMA(0,0,2)
+Auto ARIMA
 ```
 
-This will allow us to study:
+Performance is measured using MSE, RMSE, MAE, and MASE.
+
+### Five-Year Forecasts
+
+Two validation designs are compared:
+
+* a **40-year rolling window**, which discards older observations;
+* an **expanding window beginning with 80 years**, which retains all previous observations.
+
+For subject 14, the best models vary by validation design:
+
+| Validation design      | Counts      | Percentage shares            |
+| ---------------------- | ----------- | ---------------------------- |
+| 40-year rolling window | Auto ARIMA  | Simple exponential smoothing |
+| Expanding window       | Holt damped | Simple exponential smoothing |
+
+For counts, all models have mean MASE above 1 in the five-year analyses, meaning that they do not consistently outperform a naive benchmark. Percentage-share forecasts perform better relative to the benchmark, with simple exponential smoothing producing the strongest and most stable overall results.
+
+### One-Year Forecasts
+
+The notebook also tests one-year-ahead forecasting. For the expanding-window percentage analysis, simple exponential smoothing again performs best, with mean MASE well below 1.
+
+### All Pure-Mathematics Subjects
+
+The same cross-validation pipeline is applied to all 44 pure-mathematics subject-share series. The best model differs across subjects, but the Simple exponential smoothing outperforms overall.
+
+---
+
+## Next Step
+
+The next stage is to study advisor-student subject transitions using decade-indexed matrices:
 
 ```text
-self-retention of subjects
-inflows and outflows between subjects
-dominant subject mutations
-changes in transition structure over time
-pure-to-applied and applied-to-pure movement
+M(t)[i,j] = number of advisor-student relationships in decade t
+            where the advisor has subject i
+            and the student has subject j
 ```
 
-The current subject trend analysis provides the baseline marginal distributions needed before studying these advisor-student transitions.
+This will allow the project to examine subject retention, migration between fields, inflows and outflows, and changes in the structure of mathematics across generations.
