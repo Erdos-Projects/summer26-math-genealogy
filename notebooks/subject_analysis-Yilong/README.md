@@ -1,18 +1,18 @@
 # Subject Trend Analysis and Forecasting
 
-This folder studies how the distribution of mathematics PhD graduates across MSC subject areas has changed over time. The analysis contains three stages:
+This folder studies how the distribution of mathematics PhD graduates across MSC subject areas has changed over time. The analysis has three stages:
 
-1. exploratory data analysis of historical subject trends;
-2. initial time-series modeling for Algebraic Geometry;
-3. time-series cross-validation and model selection across all pure-mathematics subjects.
+1. exploratory analysis of historical subject trends;
+2. initial time-series modeling using Algebraic Geometry as a case study;
+3. rolling-window cross-validation and forecasting for all pure- and applied-mathematics subjects.
 
 ## Notebooks
 
-| Notebook                                           | Description                                                                                       |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| [`subject_EDA.ipynb`](subject_EDA.ipynb)           | Examines long-term changes in subject counts and percentage shares.                               |
-| [`subject_predict.ipynb`](subject_predict.ipynb)   | Fits several forecasting models to MSC subject 14, Algebraic Geometry.                            |
-| [`cross_validation.ipynb`](cross_validation.ipynb) | Evaluates the models with time-series cross-validation and selects common models across subjects. |
+| Notebook                                           | Description                                                               |
+| -------------------------------------------------- | ------------------------------------------------------------------------- |
+| [`subject_EDA.ipynb`](subject_EDA.ipynb)           | Visualizes historical changes in subject counts and percentage shares.    |
+| [`subject_predict.ipynb`](subject_predict.ipynb)   | Tests several forecasting models on MSC 14, Algebraic Geometry.           |
+| [`cross_validation.ipynb`](cross_validation.ipynb) | Selects forecasting models and produces coherent forecasts for 2025–2027. |
 
 ## Data
 
@@ -22,145 +22,159 @@ The notebooks use:
 data/processed/version2_new_dataset_fitted.csv
 ```
 
-The dataset contains 338,532 records, including originally observed MSC subject codes and additional high-confidence predicted codes.
+The dataset contains 338,532 mathematicians. The cross-validation notebook retains the 202,492 records with originally observed subject codes and excludes predicted subject assignments.
 
-For this preliminary analysis, subjects are divided into:
+Subjects are divided into two baskets:
 
 ```text
 Pure mathematics:    subject_code <= 60
 Applied mathematics: subject_code >= 62
 ```
 
-For each subject and year, the notebooks calculate:
+For each subject and year, the analysis calculates:
 
-* the annual number of PhD graduates;
-* the percentage of graduates within pure or applied mathematics.
+* the number of PhD graduates;
+* the subject’s percentage share within its pure- or applied-mathematics basket.
 
-Counts describe the absolute size of a subject, while percentages describe its relative importance within the corresponding group.
+Counts measure the absolute size of a subject, while shares measure its relative size within the corresponding basket.
 
 ---
 
 ## 1. Exploratory Data Analysis
 
-The EDA notebook constructs subject-by-year count tables and normalizes them by yearly totals to obtain percentage shares. A centered five-year rolling average is used to reduce annual fluctuations.
+The EDA notebook constructs subject-by-year count and percentage matrices. A centered five-year rolling average is used to reduce short-term fluctuations.
 
 The main visualizations include:
 
-* heatmaps of subject percentages from 1900 to 2026;
-* smoothed trends for the ten largest recent subjects;
+* heatmaps of historical subject shares;
+* trend plots for the largest recent subjects;
 * stacked area charts showing changes in the overall subject distribution.
 
-The leading recent pure-mathematics subjects are:
+The recent pure-mathematics distribution is led by subjects such as Probability, Partial Differential Equations, Number Theory, Combinatorics, Algebraic Geometry, and Differential Geometry.
 
-```text
-60, 35, 11, 05, 14, 53, 37, 20, 03, 46
-```
+The applied-mathematics distribution has increasingly shifted toward Computer Science, Statistics, Numerical Analysis, Operations Research, and related modern fields.
 
-These include Probability, Partial Differential Equations, Number Theory, Combinatorics, Algebraic Geometry, Differential Geometry, Dynamical Systems, Group Theory, Mathematical Logic, and Functional Analysis.
-
-The pure-mathematics plots suggest later growth in subjects such as Probability, PDE, Logic, and Combinatorics, while the relative shares of some historically large subjects, including Group Theory and Algebraic Geometry, decline.
-
-Recent applied mathematics is dominated by:
-
-```text
-68 — Computer Science
-62 — Statistics
-```
-
-Overall, the applied distribution shifts toward computer science, statistics, numerical analysis, operations research, and related modern fields.
-
-Early-year percentages are unstable because relatively few graduates are recorded before approximately 1960. Recent apparent declines should also be interpreted cautiously because the newest Mathematics Genealogy Project records may be incomplete.
+Early-year percentages are unstable because relatively few graduates are recorded. Apparent declines near the end of the dataset should also be interpreted cautiously because recent Mathematics Genealogy Project records may be incomplete.
 
 ---
 
-## 2. Initial Time-Series Modeling
+## 2. Initial Forecasting Models
 
-The modeling notebook uses MSC subject 14, Algebraic Geometry, as a case study. It separately models:
+The initial modeling notebook uses MSC 14, Algebraic Geometry, as a case study. It models both:
 
 * annual graduate counts;
 * annual percentage shares within pure mathematics.
 
-The models are:
+The candidate methods include exponential smoothing, a linear trend, a fixed ARIMA model, and Auto ARIMA.
 
-1. simple exponential smoothing;
-2. Holt's double exponential smoothing;
-3. linear trend;
-4. ARIMA(0,0,2);
-5. Auto ARIMA.
-
-Using a single chronological train-test split, Auto ARIMA gives the lowest test MSE for counts, while Holt's method gives the lowest test MSE for percentage shares.
-
-However, the result of one train-test split may depend strongly on the selected test years. Time-series cross-validation is therefore used for more reliable model comparison.
+A chronological train-test split shows that counts and percentage shares may favor different models. However, conclusions from one holdout period can depend strongly on the selected test years. The cross-validation notebook therefore evaluates models over multiple historical forecasting periods.
 
 ---
 
-## 3. Time-Series Cross-Validation
+## 3. Rolling-Window Cross-Validation
 
-The validation notebook compares six specifications:
+The cross-validation analysis uses annual observations from **1960 through 2024**.
+
+The main validation design uses:
 
 ```text
-Simple exponential smoothing
-Holt optimized
-Holt damped
-Linear trend
-ARIMA(0,0,2)
-Auto ARIMA
+Training window:   20 years
+Forecast horizon:   3 years
+Step size:          3 years
 ```
 
-Simple exponential smoothing uses a fixed smoothing level of 0.5. The Holt models estimate their parameters from each training sample.
+Every fold trains on the preceding 20 years and predicts the following three years. One-year and five-year horizons are also examined for Algebraic Geometry.
 
-Performance is measured using:
+Seven forecasting specifications are compared:
 
-* mean squared error;
-* root mean squared error;
-* mean absolute error;
-* mean absolute scaled error.
+1. simple exponential smoothing with fixed alpha = 0.5;
+2. optimized simple exponential smoothing;
+3. optimized Holt linear trend;
+4. damped Holt trend;
+5. linear regression on year;
+6. ARIMA(0,1,1);
+7. Auto ARIMA.
 
-Both expanding-window and fixed 40-year rolling-window validation are considered.
+Performance is evaluated using MSE, RMSE, MAE, and MASE. Mean MSE is used for final model selection.
 
-### Algebraic Geometry
+### Model Selection Across Subjects
 
-For five-year forecasts using a 40-year rolling window:
+The cross-validation pipeline is applied separately to:
 
-| Target            | Lowest mean MSE              |
-| ----------------- | ---------------------------- |
-| Graduate counts   | Auto ARIMA                   |
-| Percentage shares | Simple exponential smoothing |
+* 44 pure-mathematics subjects;
+* 19 applied-mathematics subjects;
+* annual pure-mathematics basket totals;
+* annual applied-mathematics basket totals.
 
-For the percentage-share series, most models have a mean MASE below 1, indicating that they outperform the corresponding naive benchmark on average. The manually specified ARIMA(0,0,2) performs substantially worse.
+For each subject, the model with the lowest mean MSE receives one vote. A tied subject divides its vote equally among the tied models.
 
-For one-year percentage forecasts, simple exponential smoothing again has the lowest mean MSE and a mean MASE below 1.
+The selected models are:
 
-These results differ from some of the single-split and expanding-window results, showing that model rankings depend on the forecast horizon and training-window design.
+| Forecast component          | Selected model |
+| --------------------------- | -------------- |
+| Pure-math subject shares    | Damped Holt    |
+| Applied-math subject shares | ARIMA(0,1,1)   |
+| Pure-math basket total      | Auto ARIMA     |
+| Applied-math basket total   | ARIMA(0,1,1)   |
 
-### Model Selection Across All Pure-Mathematics Subjects
+Direct count forecasts are also evaluated as benchmarks. Fixed-alpha simple exponential smoothing wins the largest number of direct-count series in both baskets. However, direct count models are not used for the final forecasts because independently forecasted subject counts would not necessarily add up to the total number of graduates.
 
-The 40-year rolling-window analysis is extended to all 44 pure-mathematics subjects, using a five-year forecast horizon.
+---
 
-For each subject, the model with the lowest mean cross-validation MSE receives one vote. If models tie, the subject's vote is divided equally among them.
+## 4. Coherent Forecasts for 2025–2027
 
-#### Count-Series Voting
+The final models are fitted using the most recent 20 years, **2005–2024**, matching the rolling cross-validation window.
 
-| Model                        | Subjects won | Vote percentage |
-| ---------------------------- | -----------: | --------------: |
-| Simple exponential smoothing |           28 |           63.6% |
-| Auto ARIMA                   |            9 |           20.5% |
-| Holt damped                  |            3 |            6.8% |
-| Holt optimized               |            2 |            4.5% |
-| Linear trend                 |            2 |            4.5% |
-| ARIMA(0,0,2)                 |            0 |            0.0% |
+The forecasting procedure is:
 
-#### Percentage-Share Voting
+1. Forecast every subject’s percentage share.
+2. Replace negative share forecasts with zero.
+3. Normalize the shares so that they sum to 100% within each basket.
+4. Forecast the total number of pure- and applied-mathematics graduates.
+5. Derive subject counts using
 
-| Model                        | Subjects won | Vote percentage |
-| ---------------------------- | -----------: | --------------: |
-| Simple exponential smoothing |           17 |           38.6% |
-| Holt damped                  |           12 |           27.3% |
-| Auto ARIMA                   |            5 |           11.4% |
-| Holt optimized               |            5 |           11.4% |
-| Linear trend                 |            5 |           11.4% |
-| ARIMA(0,0,2)                 |            0 |            0.0% |
+```text
+subject count = subject share × basket total / 100
+```
 
-Based on the equal-subject voting procedure, **simple exponential smoothing is selected as the common forecasting model for both counts and percentage shares**.
+This guarantees that:
 
-This does not mean that simple exponential smoothing is the best model for every individual subject. Rather, it provides the strongest common baseline when all subjects are treated equally.
+* pure-mathematics shares sum to 100%;
+* applied-mathematics shares sum to 100%;
+* derived subject counts sum exactly to their forecasted basket total.
+
+The forecasted pure-mathematics total increases from approximately **1,638 graduates in 2025** to **1,707 in 2027**. The applied-mathematics total remains approximately **1,535 graduates per year** under the selected model.
+
+The five largest forecasted pure-mathematics subjects are:
+
+```text
+35 — Partial differential equations
+11 — Number theory
+14 — Algebraic geometry
+60 — Probability theory and stochastic processes
+05 — Combinatorics
+```
+
+The five largest forecasted applied-mathematics subjects are:
+
+```text
+68 — Computer science
+62 — Statistics
+65 — Numerical analysis
+90 — Operations research and mathematical programming
+91 — Game theory, economics, and social sciences
+```
+
+The complete forecast table is exported as:
+
+```text
+all_subject_share_and_derived_count_forecasts_2025_2027.csv
+```
+
+## Conclusions
+
+The exploratory analysis identifies substantial long-term changes in the composition of mathematics. Cross-validation shows that no single forecasting model is best for every subject or target.
+
+The final workflow therefore selects separate models for pure shares, applied shares, and the two basket totals. Forecasting shares and totals separately also produces internally consistent count forecasts.
+
+These forecasts should be treated as exploratory rather than precise predictions. Model performance varies across subjects and historical periods, while incomplete recent records and long-term structural changes limit how confidently past trends can be extrapolated.
