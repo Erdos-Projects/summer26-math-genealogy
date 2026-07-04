@@ -95,6 +95,8 @@ Seven forecasting specifications are compared:
 6. ARIMA(0,1,1);
 7. Auto ARIMA.
 
+Note that ARIMA(0,1,1) is mathematically equivalent to simple exponential smoothing, and the latter one is performs well in preliminary tests.
+
 Performance is evaluated using MSE, RMSE, MAE, and MASE. Mean MSE is used for final model selection.
 
 ### Model Selection Across Subjects
@@ -171,10 +173,78 @@ The complete forecast table is exported as:
 all_subject_share_and_derived_count_forecasts_2025_2027.csv
 ```
 
-## Conclusions
+## Forecast Figures and Interpretation
 
-The exploratory analysis identifies substantial long-term changes in the composition of mathematics. Cross-validation shows that no single forecasting model is best for every subject or target.
+The following figures summarize the final forecasting results for the top five pure-mathematics and applied-mathematics subjects. In each plot, the vertical dotted line marks the start of the forecast period, and the dashed extensions show the forecasts for 2025–2027.
 
-The final workflow therefore selects separate models for pure shares, applied shares, and the two basket totals. Forecasting shares and totals separately also produces internally consistent count forecasts.
+The count forecasts are **coherent derived forecasts**: subject shares are forecast first, basket totals are forecast separately, and subject counts are then obtained by
 
-These forecasts should be treated as exploratory rather than precise predictions. Model performance varies across subjects and historical periods, while incomplete recent records and long-term structural changes limit how confidently past trends can be extrapolated.
+\[
+\text{subject count} = \frac{\text{subject share} \times \text{basket total}}{100}.
+\]
+
+This guarantees that the forecasted subject counts add up exactly to the forecasted total number of graduates in each basket.
+
+### Top five pure mathematics subjects: counts
+
+![Top five pure mathematics subjects: historical counts and coherent derived forecasts](top5_pure_counts_forecast.png)
+
+This figure shows the historical counts and forecasted counts for the five largest pure-mathematics subjects: 35, 11, 14, 60, and 5.  
+Several patterns are visible:
+
+- **Subject 35 (Partial Differential Equations)** remains the largest pure subject in forecasted counts.
+- **Subject 11 (Number Theory)** and **Subject 14 (Algebraic Geometry)** both show modest upward forecasts.
+- **Subject 60 (Probability Theory and Stochastic Processes)** declines from its earlier peak and remains below Subject 35 in the forecast period.
+- **Subject 5 (Combinatorics)** appears relatively stable, with only a slight upward movement.
+
+Overall, the pure-mathematics forecasts suggest moderate growth or stability rather than dramatic structural change over 2025–2027.
+
+### Top five pure mathematics subjects: shares
+
+![Top five pure mathematics subjects: historical shares and forecasts](top5_pure_shares_forecast.png)
+
+This figure shows the same five pure subjects in terms of their percentage share within pure mathematics.
+
+- **Subject 35** keeps the largest forecasted share, at roughly around 10%.
+- **Subjects 11 and 14** both continue a gradual upward trend.
+- **Subject 60** shows a noticeable long-term decline in share relative to its earlier dominance.
+- **Subject 5** remains fairly stable near the 8% range.
+
+The share plot helps separate **relative importance** from raw counts. For example, a subject may rise in counts simply because the total number of pure-math graduates rises, but the share plot shows whether the subject is actually gaining or losing ground within pure mathematics.
+
+### Top five applied mathematics subjects: counts
+
+![Top five applied mathematics subjects: historical counts and coherent derived forecasts](top5_applied_counts_forecast.png)
+
+This figure shows the historical and forecasted counts for the five largest applied-mathematics subjects: 68, 62, 65, 90, and 91.
+
+- **Subject 68 (Computer Science)** remains by far the largest applied subject, although its forecasted counts are lower than its historical peak.
+- **Subject 62 (Statistics)** remains the second-largest applied subject.
+- **Subject 65 (Numerical Analysis)** stays clearly below 68 and 62 but remains well above 90 and 91.
+- **Subjects 90 (Operations Research and Mathematical Programming)** and **91 (Game Theory, Economics, and Social Sciences)** are forecast to remain comparatively small and fairly stable.
+
+The applied count forecasts suggest that the largest fields remain dominant, but recent declines in some subjects are projected to persist into the near future.
+
+### Top five applied mathematics subjects: shares
+
+![Top five applied mathematics subjects: historical shares and forecasts](top5_applied_shares_forecast.png)
+
+This figure shows the top five applied subjects as shares within applied mathematics.
+
+- **Subject 68** continues to dominate, with a forecasted share around the low 30% range.
+- **Subject 62** remains second, with a share around the low 20% range.
+- **Subject 65** stays near 10%.
+- **Subjects 90 and 91** remain much smaller, around the 5–6% range.
+
+Compared with the count plot, the share plot shows that the ranking of the largest applied subjects is quite stable. In particular, Computer Science and Statistics remain the two central applied areas in both absolute size and relative share.
+
+### Overall interpretation
+
+Taken together, these four figures suggest that the short-term forecasts are driven more by **continuation of recent structure** than by large changes in ranking.
+
+- In **pure mathematics**, the top subjects remain relatively close to one another, with Subject 35 leading and Subjects 11 and 14 gradually strengthening.
+- In **applied mathematics**, Subject 68 remains dominant, followed by Subject 62, while the remaining top subjects stay much smaller.
+- The forecast horizon is short (2025–2027), so these plots should be interpreted as **near-term extrapolations** rather than long-run predictions.
+- Because the final workflow forecasts shares and totals separately, the resulting count forecasts are internally consistent and easier to interpret than independently forecasted subject counts.
+
+These figures therefore provide a compact visual summary of the final forecasting pipeline and its main substantive conclusions.

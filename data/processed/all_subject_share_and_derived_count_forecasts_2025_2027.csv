@@ -1,0 +1,379 @@
+basket,subject_code,series_type,year,forecast,share_model,total_model
+Applied,62.0,derived_count,2025,334.0412405592752,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,62.0,derived_count,2026,334.0412405592752,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,62.0,derived_count,2027,334.0412405592752,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,65.0,derived_count,2025,152.73406993849088,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,65.0,derived_count,2026,152.73406993849088,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,65.0,derived_count,2027,152.73406993849088,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,68.0,derived_count,2025,495.47028060851864,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,68.0,derived_count,2026,495.47028060851864,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,68.0,derived_count,2027,495.47028060851864,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,70.0,derived_count,2025,7.263788894825859,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,70.0,derived_count,2026,7.263788894825859,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,70.0,derived_count,2027,7.263788894825859,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,74.0,derived_count,2025,26.26098828832882,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,74.0,derived_count,2026,26.26098828832882,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,74.0,derived_count,2027,26.26098828832882,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,76.0,derived_count,2025,46.27875823194276,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,76.0,derived_count,2026,46.27875823194276,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,76.0,derived_count,2027,46.27875823194276,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,78.0,derived_count,2025,4.100847326222933,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,78.0,derived_count,2026,4.100847326222933,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,78.0,derived_count,2027,4.100847326222933,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,80.0,derived_count,2025,3.3373771991469328,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,80.0,derived_count,2026,3.3373771991469328,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,80.0,derived_count,2027,3.3373771991469328,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,81.0,derived_count,2025,35.52742357196753,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,81.0,derived_count,2026,35.52742357196753,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,81.0,derived_count,2027,35.52742357196753,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,82.0,derived_count,2025,11.99782481875665,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,82.0,derived_count,2026,11.99782481875665,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,82.0,derived_count,2027,11.99782481875665,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,83.0,derived_count,2025,13.852381185357041,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,83.0,derived_count,2026,13.852381185357041,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,83.0,derived_count,2027,13.852381185357041,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,85.0,derived_count,2025,15.803407305838364,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,85.0,derived_count,2026,15.803407305838364,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,85.0,derived_count,2027,15.803407305838364,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,86.0,derived_count,2025,6.121463643661448,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,86.0,derived_count,2026,6.121463643661448,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,86.0,derived_count,2027,6.121463643661448,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,90.0,derived_count,2025,96.20991331300999,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,90.0,derived_count,2026,96.20991331300999,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,90.0,derived_count,2027,96.20991331300999,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,91.0,derived_count,2025,82.22691201711206,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,91.0,derived_count,2026,82.22691201711206,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,91.0,derived_count,2027,82.22691201711206,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,92.0,derived_count,2025,69.59705876532084,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,92.0,derived_count,2026,69.59705876532084,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,92.0,derived_count,2027,69.59705876532084,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,93.0,derived_count,2025,45.01648101373765,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,93.0,derived_count,2026,45.01648101373765,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,93.0,derived_count,2027,45.01648101373765,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,94.0,derived_count,2025,56.43554167686147,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,94.0,derived_count,2026,56.43554167686147,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,94.0,derived_count,2027,56.43554167686147,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,97.0,derived_count,2025,32.66389868646365,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,97.0,derived_count,2026,32.66389868646365,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,97.0,derived_count,2027,32.66389868646365,"ARIMA(0,1,1)","ARIMA(0,1,1)"
+Applied,62.0,share,2025,21.762499849824206,"ARIMA(0,1,1)",
+Applied,62.0,share,2026,21.762499849824206,"ARIMA(0,1,1)",
+Applied,62.0,share,2027,21.762499849824206,"ARIMA(0,1,1)",
+Applied,65.0,share,2025,9.950493443666964,"ARIMA(0,1,1)",
+Applied,65.0,share,2026,9.950493443666964,"ARIMA(0,1,1)",
+Applied,65.0,share,2027,9.950493443666964,"ARIMA(0,1,1)",
+Applied,68.0,share,2025,32.27946312641559,"ARIMA(0,1,1)",
+Applied,68.0,share,2026,32.27946312641559,"ARIMA(0,1,1)",
+Applied,68.0,share,2027,32.27946312641559,"ARIMA(0,1,1)",
+Applied,70.0,share,2025,0.47322960622507837,"ARIMA(0,1,1)",
+Applied,70.0,share,2026,0.47322960622507837,"ARIMA(0,1,1)",
+Applied,70.0,share,2027,0.47322960622507837,"ARIMA(0,1,1)",
+Applied,74.0,share,2025,1.7108808263438908,"ARIMA(0,1,1)",
+Applied,74.0,share,2026,1.7108808263438908,"ARIMA(0,1,1)",
+Applied,74.0,share,2027,1.7108808263438908,"ARIMA(0,1,1)",
+Applied,76.0,share,2025,3.015021341037048,"ARIMA(0,1,1)",
+Applied,76.0,share,2026,3.015021341037048,"ARIMA(0,1,1)",
+Applied,76.0,share,2027,3.015021341037048,"ARIMA(0,1,1)",
+Applied,78.0,share,2025,0.2671666802927054,"ARIMA(0,1,1)",
+Applied,78.0,share,2026,0.2671666802927054,"ARIMA(0,1,1)",
+Applied,78.0,share,2027,0.2671666802927054,"ARIMA(0,1,1)",
+Applied,80.0,share,2025,0.21742725740582264,"ARIMA(0,1,1)",
+Applied,80.0,share,2026,0.21742725740582264,"ARIMA(0,1,1)",
+Applied,80.0,share,2027,0.21742725740582264,"ARIMA(0,1,1)",
+Applied,81.0,share,2025,2.314581124339907,"ARIMA(0,1,1)",
+Applied,81.0,share,2026,2.314581124339907,"ARIMA(0,1,1)",
+Applied,81.0,share,2027,2.314581124339907,"ARIMA(0,1,1)",
+Applied,82.0,share,2025,0.7816479796903293,"ARIMA(0,1,1)",
+Applied,82.0,share,2026,0.7816479796903293,"ARIMA(0,1,1)",
+Applied,82.0,share,2027,0.7816479796903293,"ARIMA(0,1,1)",
+Applied,83.0,share,2025,0.9024707337372798,"ARIMA(0,1,1)",
+Applied,83.0,share,2026,0.9024707337372798,"ARIMA(0,1,1)",
+Applied,83.0,share,2027,0.9024707337372798,"ARIMA(0,1,1)",
+Applied,85.0,share,2025,1.0295784093730478,"ARIMA(0,1,1)",
+Applied,85.0,share,2026,1.0295784093730478,"ARIMA(0,1,1)",
+Applied,85.0,share,2027,1.0295784093730478,"ARIMA(0,1,1)",
+Applied,86.0,share,2025,0.3988080974757582,"ARIMA(0,1,1)",
+Applied,86.0,share,2026,0.3988080974757582,"ARIMA(0,1,1)",
+Applied,86.0,share,2027,0.3988080974757582,"ARIMA(0,1,1)",
+Applied,90.0,share,2025,6.267993199044665,"ARIMA(0,1,1)",
+Applied,90.0,share,2026,6.267993199044665,"ARIMA(0,1,1)",
+Applied,90.0,share,2027,6.267993199044665,"ARIMA(0,1,1)",
+Applied,91.0,share,2025,5.357012677320516,"ARIMA(0,1,1)",
+Applied,91.0,share,2026,5.357012677320516,"ARIMA(0,1,1)",
+Applied,91.0,share,2027,5.357012677320516,"ARIMA(0,1,1)",
+Applied,92.0,share,2025,4.534188588189417,"ARIMA(0,1,1)",
+Applied,92.0,share,2026,4.534188588189417,"ARIMA(0,1,1)",
+Applied,92.0,share,2027,4.534188588189417,"ARIMA(0,1,1)",
+Applied,93.0,share,2025,2.9327850646849654,"ARIMA(0,1,1)",
+Applied,93.0,share,2026,2.9327850646849654,"ARIMA(0,1,1)",
+Applied,93.0,share,2027,2.9327850646849654,"ARIMA(0,1,1)",
+Applied,94.0,share,2025,3.67672705684826,"ARIMA(0,1,1)",
+Applied,94.0,share,2026,3.67672705684826,"ARIMA(0,1,1)",
+Applied,94.0,share,2027,3.67672705684826,"ARIMA(0,1,1)",
+Applied,97.0,share,2025,2.128024938084551,"ARIMA(0,1,1)",
+Applied,97.0,share,2026,2.128024938084551,"ARIMA(0,1,1)",
+Applied,97.0,share,2027,2.128024938084551,"ARIMA(0,1,1)",
+Pure,0.0,derived_count,2025,15.009281835884288,Holt damped,Auto ARIMA
+Pure,0.0,derived_count,2026,14.455294149823311,Holt damped,Auto ARIMA
+Pure,0.0,derived_count,2027,13.810262223347687,Holt damped,Auto ARIMA
+Pure,1.0,derived_count,2025,0.23200095115996805,Holt damped,Auto ARIMA
+Pure,1.0,derived_count,2026,0.0,Holt damped,Auto ARIMA
+Pure,1.0,derived_count,2027,0.0,Holt damped,Auto ARIMA
+Pure,3.0,derived_count,2025,61.05445318122886,Holt damped,Auto ARIMA
+Pure,3.0,derived_count,2026,62.32258013318083,Holt damped,Auto ARIMA
+Pure,3.0,derived_count,2027,63.35668308005867,Holt damped,Auto ARIMA
+Pure,5.0,derived_count,2025,135.60792326080016,Holt damped,Auto ARIMA
+Pure,5.0,derived_count,2026,138.8177723200525,Holt damped,Auto ARIMA
+Pure,5.0,derived_count,2027,141.46408353912372,Holt damped,Auto ARIMA
+Pure,6.0,derived_count,2025,6.620266062535741,Holt damped,Auto ARIMA
+Pure,6.0,derived_count,2026,6.647781677552054,Holt damped,Auto ARIMA
+Pure,6.0,derived_count,2027,6.643986790150158,Holt damped,Auto ARIMA
+Pure,8.0,derived_count,2025,5.29098298459005,Holt damped,Auto ARIMA
+Pure,8.0,derived_count,2026,5.369844719781661,Holt damped,Auto ARIMA
+Pure,8.0,derived_count,2027,5.425533485220364,Holt damped,Auto ARIMA
+Pure,11.0,derived_count,2025,147.43310054483473,Holt damped,Auto ARIMA
+Pure,11.0,derived_count,2026,152.3560971416698,Holt damped,Auto ARIMA
+Pure,11.0,derived_count,2027,156.7220734094113,Holt damped,Auto ARIMA
+Pure,12.0,derived_count,2025,4.706021164810074,Holt damped,Auto ARIMA
+Pure,12.0,derived_count,2026,4.81045270971933,Holt damped,Auto ARIMA
+Pure,12.0,derived_count,2027,4.895641297593618,Holt damped,Auto ARIMA
+Pure,13.0,derived_count,2025,34.87104003281978,Holt damped,Auto ARIMA
+Pure,13.0,derived_count,2026,35.71358747304475,Holt damped,Auto ARIMA
+Pure,13.0,derived_count,2027,36.40837472403414,Holt damped,Auto ARIMA
+Pure,14.0,derived_count,2025,138.96145408031762,Holt damped,Auto ARIMA
+Pure,14.0,derived_count,2026,145.0804399086487,Holt damped,Auto ARIMA
+Pure,14.0,derived_count,2027,150.72253774753514,Holt damped,Auto ARIMA
+Pure,15.0,derived_count,2025,17.16720097038509,Holt damped,Auto ARIMA
+Pure,15.0,derived_count,2026,17.512124702756626,Holt damped,Auto ARIMA
+Pure,15.0,derived_count,2027,17.784758874232903,Holt damped,Auto ARIMA
+Pure,16.0,derived_count,2025,33.59947300648209,Holt damped,Auto ARIMA
+Pure,16.0,derived_count,2026,33.96188884102453,Holt damped,Auto ARIMA
+Pure,16.0,derived_count,2027,34.25659159993513,Holt damped,Auto ARIMA
+Pure,17.0,derived_count,2025,21.07874088031853,Holt damped,Auto ARIMA
+Pure,17.0,derived_count,2026,21.766604217188142,Holt damped,Auto ARIMA
+Pure,17.0,derived_count,2027,22.366794938488592,Holt damped,Auto ARIMA
+Pure,18.0,derived_count,2025,34.00869052001422,Holt damped,Auto ARIMA
+Pure,18.0,derived_count,2026,35.921222405002226,Holt damped,Auto ARIMA
+Pure,18.0,derived_count,2027,37.73054831414966,Holt damped,Auto ARIMA
+Pure,19.0,derived_count,2025,4.995739409316653,Holt damped,Auto ARIMA
+Pure,19.0,derived_count,2026,4.763011271792813,Holt damped,Auto ARIMA
+Pure,19.0,derived_count,2027,4.510323139710887,Holt damped,Auto ARIMA
+Pure,20.0,derived_count,2025,63.94482383199971,Holt damped,Auto ARIMA
+Pure,20.0,derived_count,2026,64.56194104067464,Holt damped,Auto ARIMA
+Pure,20.0,derived_count,2027,64.88806513859592,Holt damped,Auto ARIMA
+Pure,22.0,derived_count,2025,15.560511555274976,Holt damped,Auto ARIMA
+Pure,22.0,derived_count,2026,15.928678186928142,Holt damped,Auto ARIMA
+Pure,22.0,derived_count,2027,16.232206132389553,Holt damped,Auto ARIMA
+Pure,26.0,derived_count,2025,6.848984658314477,Holt damped,Auto ARIMA
+Pure,26.0,derived_count,2026,6.999207233126336,Holt damped,Auto ARIMA
+Pure,26.0,derived_count,2027,7.122943702852855,Holt damped,Auto ARIMA
+Pure,28.0,derived_count,2025,6.21495949541569,Holt damped,Auto ARIMA
+Pure,28.0,derived_count,2026,6.359276433552023,Holt damped,Auto ARIMA
+Pure,28.0,derived_count,2027,6.4780607085845165,Holt damped,Auto ARIMA
+Pure,30.0,derived_count,2025,18.687027280932377,Holt damped,Auto ARIMA
+Pure,30.0,derived_count,2026,18.636846570279076,Holt damped,Auto ARIMA
+Pure,30.0,derived_count,2027,18.494125225244943,Holt damped,Auto ARIMA
+Pure,31.0,derived_count,2025,2.9971232364697196,Holt damped,Auto ARIMA
+Pure,31.0,derived_count,2026,3.0659430002817705,Holt damped,Auto ARIMA
+Pure,31.0,derived_count,2027,3.1226603772647357,Holt damped,Auto ARIMA
+Pure,32.0,derived_count,2025,13.700726274845648,Holt damped,Auto ARIMA
+Pure,32.0,derived_count,2026,13.783388818231627,Holt damped,Auto ARIMA
+Pure,32.0,derived_count,2027,13.805242688506159,Holt damped,Auto ARIMA
+Pure,33.0,derived_count,2025,4.396151189074127,Holt damped,Auto ARIMA
+Pure,33.0,derived_count,2026,4.37503057510025,Holt damped,Auto ARIMA
+Pure,33.0,derived_count,2027,4.331969106238466,Holt damped,Auto ARIMA
+Pure,34.0,derived_count,2025,24.279270090892304,Holt damped,Auto ARIMA
+Pure,34.0,derived_count,2026,24.37886698390781,Holt damped,Auto ARIMA
+Pure,34.0,derived_count,2027,24.38995752668078,Holt damped,Auto ARIMA
+Pure,35.0,derived_count,2025,172.67877479453853,Holt damped,Auto ARIMA
+Pure,35.0,derived_count,2026,176.87660330192895,Holt damped,Auto ARIMA
+Pure,35.0,derived_count,2027,180.3502436177843,Holt damped,Auto ARIMA
+Pure,37.0,derived_count,2025,86.41792211412138,Holt damped,Auto ARIMA
+Pure,37.0,derived_count,2026,88.91795914598333,Holt damped,Auto ARIMA
+Pure,37.0,derived_count,2027,91.07895118715454,Holt damped,Auto ARIMA
+Pure,39.0,derived_count,2025,3.2415047125086205,Holt damped,Auto ARIMA
+Pure,39.0,derived_count,2026,3.0965687595199745,Holt damped,Auto ARIMA
+Pure,39.0,derived_count,2027,2.931147196371838,Holt damped,Auto ARIMA
+Pure,40.0,derived_count,2025,1.6347652928124883,Holt damped,Auto ARIMA
+Pure,40.0,derived_count,2026,1.5659045372013587,Holt damped,Auto ARIMA
+Pure,40.0,derived_count,2027,1.486858766974684,Holt damped,Auto ARIMA
+Pure,41.0,derived_count,2025,8.49034802696881,Holt damped,Auto ARIMA
+Pure,41.0,derived_count,2026,8.331317181099704,Holt damped,Auto ARIMA
+Pure,41.0,derived_count,2027,8.13370536298247,Holt damped,Auto ARIMA
+Pure,42.0,derived_count,2025,24.53391670688844,Holt damped,Auto ARIMA
+Pure,42.0,derived_count,2026,25.138140382181117,Holt damped,Auto ARIMA
+Pure,42.0,derived_count,2027,25.638765604096108,Holt damped,Auto ARIMA
+Pure,43.0,derived_count,2025,7.557625906884937,Holt damped,Auto ARIMA
+Pure,43.0,derived_count,2026,7.6629895616731085,Holt damped,Auto ARIMA
+Pure,43.0,derived_count,2027,7.735016029799575,Holt damped,Auto ARIMA
+Pure,44.0,derived_count,2025,2.1130945237255507,Holt damped,Auto ARIMA
+Pure,44.0,derived_count,2026,2.160876027743573,Holt damped,Auto ARIMA
+Pure,44.0,derived_count,2027,2.200247662825397,Holt damped,Auto ARIMA
+Pure,45.0,derived_count,2025,1.9825167469464895,Holt damped,Auto ARIMA
+Pure,45.0,derived_count,2026,1.889269332849741,Holt damped,Auto ARIMA
+Pure,45.0,derived_count,2027,1.7833430163549517,Holt damped,Auto ARIMA
+Pure,46.0,derived_count,2025,54.504642656691686,Holt damped,Auto ARIMA
+Pure,46.0,derived_count,2026,55.06259492546364,Holt damped,Auto ARIMA
+Pure,46.0,derived_count,2027,55.37355282474126,Holt damped,Auto ARIMA
+Pure,47.0,derived_count,2025,33.4781256892818,Holt damped,Auto ARIMA
+Pure,47.0,derived_count,2026,33.993519698762185,Holt damped,Auto ARIMA
+Pure,47.0,derived_count,2027,34.362823082497734,Holt damped,Auto ARIMA
+Pure,49.0,derived_count,2025,23.478147354498947,Holt damped,Auto ARIMA
+Pure,49.0,derived_count,2026,23.811137438951363,Holt damped,Auto ARIMA
+Pure,49.0,derived_count,2027,24.053855087983255,Holt damped,Auto ARIMA
+Pure,51.0,derived_count,2025,19.39218861676647,Holt damped,Auto ARIMA
+Pure,51.0,derived_count,2026,19.83839882209429,Holt damped,Auto ARIMA
+Pure,51.0,derived_count,2027,20.206149193641153,Holt damped,Auto ARIMA
+Pure,52.0,derived_count,2025,15.360767402162615,Holt damped,Auto ARIMA
+Pure,52.0,derived_count,2026,15.720602590702065,Holt damped,Auto ARIMA
+Pure,52.0,derived_count,2027,16.017416753597324,Holt damped,Auto ARIMA
+Pure,53.0,derived_count,2025,97.73449506645913,Holt damped,Auto ARIMA
+Pure,53.0,derived_count,2026,101.17843009284447,Holt damped,Auto ARIMA
+Pure,53.0,derived_count,2027,104.25898423319587,Holt damped,Auto ARIMA
+Pure,54.0,derived_count,2025,8.318199020846768,Holt damped,Auto ARIMA
+Pure,54.0,derived_count,2026,7.963061517078203,Holt damped,Auto ARIMA
+Pure,54.0,derived_count,2027,7.557203205888011,Holt damped,Auto ARIMA
+Pure,55.0,derived_count,2025,54.70732990591729,Holt damped,Auto ARIMA
+Pure,55.0,derived_count,2026,57.29478485127504,Holt damped,Auto ARIMA
+Pure,55.0,derived_count,2027,59.700303557545,Holt damped,Auto ARIMA
+Pure,57.0,derived_count,2025,48.44469147428326,Holt damped,Auto ARIMA
+Pure,57.0,derived_count,2026,50.233919850755974,Holt damped,Auto ARIMA
+Pure,57.0,derived_count,2027,51.84570221789373,Holt damped,Auto ARIMA
+Pure,58.0,derived_count,2025,15.394052713791192,Holt damped,Auto ARIMA
+Pure,58.0,derived_count,2026,15.714909092041484,Holt damped,Auto ARIMA
+Pure,58.0,derived_count,2027,15.97131862554604,Holt damped,Auto ARIMA
+Pure,60.0,derived_count,2025,140.9677882110947,Holt damped,Auto ARIMA
+Pure,60.0,derived_count,2026,141.7172610076533,Holt damped,Auto ARIMA
+Pure,60.0,derived_count,2027,141.80535061246647,Holt damped,Auto ARIMA
+Pure,0.0,share,2025,0.9164871933437112,Holt damped,
+Pure,0.0,share,2026,0.8626132348763322,Holt damped,
+Pure,0.0,share,2027,0.8088217485553322,Holt damped,
+Pure,1.0,share,2025,0.01416629409098863,Holt damped,
+Pure,1.0,share,2026,0.0,Holt damped,
+Pure,1.0,share,2027,0.0,Holt damped,
+Pure,3.0,share,2025,3.728068074744282,Holt damped,
+Pure,3.0,share,2026,3.7190721888685787,Holt damped,
+Pure,3.0,share,2027,3.710593062081422,Holt damped,
+Pure,5.0,share,2025,8.280404508583729,Holt damped,
+Pure,5.0,share,2026,8.283888684533641,Holt damped,
+Pure,5.0,share,2027,8.285087245660984,Holt damped,
+Pure,6.0,share,2025,0.40424246337596587,Holt damped,
+Pure,6.0,share,2026,0.3967034083284206,Holt damped,
+Pure,6.0,share,2027,0.38911650815020793,Holt damped,
+Pure,8.0,share,2025,0.3230746279933904,Holt damped,
+Pure,8.0,share,2026,0.32044309001979515,Holt damped,
+Pure,8.0,share,2027,0.31775569568422674,Holt damped,
+Pure,11.0,share,2025,9.002465940858654,Holt damped,
+Pure,11.0,share,2026,9.091782183492606,Holt damped,
+Pure,11.0,share,2027,9.178697652671346,Holt damped,
+Pure,12.0,share,2025,0.28735606248936707,Holt damped,
+Pure,12.0,share,2026,0.2870616211709071,Holt damped,
+Pure,12.0,share,2027,0.286721648769643,Holt damped,
+Pure,13.0,share,2025,2.129273202948841,Holt damped,
+Pure,13.0,share,2026,2.1311924129567807,Holt damped,
+Pure,13.0,share,2027,2.1323190559384404,Holt damped,
+Pure,14.0,share,2025,8.48517566833523,Holt damped,
+Pure,14.0,share,2026,8.657610581270012,Holt damped,
+Pure,14.0,share,2027,8.827324532734854,Holt damped,
+Pure,15.0,share,2025,1.0482526750413779,Holt damped,
+Pure,15.0,share,2026,1.045028235526239,Holt damped,
+Pure,15.0,share,2027,1.0415949775358488,Holt damped,
+Pure,16.0,share,2025,2.0516295882936446,Holt damped,
+Pure,16.0,share,2026,2.0266605779187596,Holt damped,
+Pure,16.0,share,2027,2.0062961781104387,Holt damped,
+Pure,17.0,share,2025,1.287096629929084,Holt damped,
+Pure,17.0,share,2026,1.2989124040959747,Holt damped,
+Pure,17.0,share,2027,1.3099497966912315,Holt damped,
+Pure,18.0,share,2025,2.0766169670733206,Holt damped,
+Pure,18.0,share,2026,2.1435829349671103,Holt damped,
+Pure,18.0,share,2027,2.2097544252135424,Holt damped,
+Pure,19.0,share,2025,0.3050466531299857,Holt damped,
+Pure,19.0,share,2026,0.28423057450988304,Holt damped,
+Pure,19.0,share,2027,0.26415482844656857,Holt damped,
+Pure,20.0,share,2025,3.9045580437123375,Holt damped,
+Pure,20.0,share,2026,3.8527050528177673,Holt damped,
+Pure,20.0,share,2027,3.8002810849633013,Holt damped,
+Pure,22.0,share,2025,0.9501460308507924,Holt damped,
+Pure,22.0,share,2026,0.9505367705227986,Holt damped,
+Pure,22.0,share,2027,0.950667057191284,Holt damped,
+Pure,26.0,share,2025,0.4182083323764142,Holt damped,
+Pure,26.0,share,2026,0.4176745717077456,Holt damped,
+Pure,26.0,share,2027,0.4171674431252105,Holt damped,
+Pure,28.0,share,2025,0.37949389231138997,Holt damped,
+Pure,28.0,share,2026,0.3794869864952687,Holt damped,
+Pure,28.0,share,2027,0.3793987619371078,Holt damped,
+Pure,30.0,share,2025,1.1410553397493755,Holt damped,
+Pure,30.0,share,2026,1.1121455116206551,Holt damped,
+Pure,30.0,share,2027,1.083140237366027,Holt damped,
+Pure,31.0,share,2025,0.1830084272606719,Holt damped,
+Pure,31.0,share,2026,0.18295878188351028,Holt damped,
+Pure,31.0,share,2027,0.1828839732104289,Holt damped,
+Pure,32.0,share,2025,0.8365850083768479,Holt damped,
+Pure,32.0,share,2026,0.8225175837185146,Holt damped,
+Pure,32.0,share,2027,0.8085277708681745,Holt damped,
+Pure,33.0,share,2025,0.2684349796908049,Holt damped,
+Pure,33.0,share,2026,0.2610779993789484,Holt damped,
+Pure,33.0,share,2027,0.25370921786495493,Holt damped,
+Pure,34.0,share,2025,1.482525303031917,Holt damped,
+Pure,34.0,share,2026,1.4547980202717337,Holt damped,
+Pure,34.0,share,2027,1.4284397917202085,Holt damped,
+Pure,35.0,share,2025,10.544001198186141,Holt damped,
+Pure,35.0,share,2026,10.555032458476788,Holt damped,
+Pure,35.0,share,2027,10.562522060493967,Holt damped,
+Pure,37.0,share,2025,5.276796035877777,Holt damped,
+Pure,37.0,share,2026,5.3061395764440915,Holt damped,
+Pure,37.0,share,2027,5.334195351572612,Holt damped,
+Pure,39.0,share,2025,0.19793069306453004,Holt damped,
+Pure,39.0,share,2026,0.18478636041447596,Holt damped,
+Pure,39.0,share,2027,0.17166767453803206,Holt damped,
+Pure,40.0,share,2025,0.09982099552581006,Holt damped,
+Pure,40.0,share,2026,0.09344465524828496,Holt damped,
+Pure,40.0,share,2027,0.08708043977080769,Holt damped,
+Pure,41.0,share,2025,0.5184322154004991,Holt damped,
+Pure,41.0,share,2026,0.49716763905887207,Holt damped,
+Pure,41.0,share,2027,0.47636443736740613,Holt damped,
+Pure,42.0,share,2025,1.4980743722639176,Holt damped,
+Pure,42.0,share,2026,1.5001073218640564,Holt damped,
+Pure,42.0,share,2027,1.5015783836201848,Holt damped,
+Pure,43.0,share,2025,0.46147893226862147,Holt damped,
+Pure,43.0,share,2026,0.45728548627972426,Holt damped,
+Pure,43.0,share,2027,0.453014511176274,Holt damped,
+Pure,44.0,share,2025,0.12902842990722602,Holt damped,
+Pure,44.0,share,2026,0.12894931373509175,Holt damped,
+Pure,44.0,share,2027,0.12886128685468456,Holt damped,
+Pure,45.0,share,2025,0.12105517299448093,Holt damped,
+Pure,45.0,share,2026,0.11274130528724559,Holt damped,
+Pure,45.0,share,2027,0.10444454952662766,Holt damped,
+Pure,46.0,share,2025,3.3281277224874137,Holt damped,
+Pure,46.0,share,2026,3.2858358077701153,Holt damped,
+Pure,46.0,share,2027,3.243047314750521,Holt damped,
+Pure,47.0,share,2025,2.044219955815774,Holt damped,
+Pure,47.0,share,2026,2.0285481352546526,Holt damped,
+Pure,47.0,share,2027,2.012517807510976,Holt damped,
+Pure,49.0,share,2025,1.4336076575223493,Holt damped,
+Pure,49.0,share,2026,1.4209190127445341,Holt damped,
+Pure,49.0,share,2027,1.4087553745987538,Holt damped,
+Pure,51.0,share,2025,1.1841134514298415,Holt damped,
+Pure,51.0,share,2026,1.1838476066502421,Holt damped,
+Pure,51.0,share,2027,1.183407864243223,Holt damped,
+Pure,52.0,share,2025,0.937949380786224,Holt damped,
+Pure,52.0,share,2026,0.9381199520686689,Holt damped,
+Pure,52.0,share,2027,0.9380875479744248,Holt damped,
+Pure,53.0,share,2025,5.967801394879109,Holt damped,
+Pure,53.0,share,2026,6.037777715036273,Holt damped,
+Pure,53.0,share,2027,6.106106644921834,Holt damped,
+Pure,54.0,share,2025,0.5079205625990642,Holt damped,
+Pure,54.0,share,2026,0.4751921464600582,Holt damped,
+Pure,54.0,share,2027,0.442600597462994,Holt damped,
+Pure,55.0,share,2025,3.3405040820095073,Holt damped,
+Pure,55.0,share,2026,3.419040746583904,Holt damped,
+Pure,55.0,share,2027,3.496450909604281,Holt damped,
+Pure,57.0,share,2025,2.958098848908188,Holt damped,
+Pure,57.0,share,2026,2.997686775091233,Holt damped,
+Pure,57.0,share,2027,3.036432679175504,Holt damped,
+Pure,58.0,share,2025,0.9399818272528572,Holt damped,
+Pure,58.0,share,2026,0.9377801950740023,Holt damped,
+Pure,58.0,share,2027,0.9353877318570644,Holt damped,
+Pure,60.0,share,2025,8.607685163228545,Holt damped,
+Pure,60.0,share,2026,8.456914379505694,Holt damped,
+Pure,60.0,share,2027,8.305074138489042,Holt damped,
