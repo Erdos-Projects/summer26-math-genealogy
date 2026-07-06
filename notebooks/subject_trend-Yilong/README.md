@@ -1,10 +1,9 @@
 # Subject Trend Analysis and Forecasting
 
-This folder studies how the distribution of mathematics PhD graduates across MSC subject areas has changed over time. The analysis has three stages:
+This folder studies how the distribution of mathematics PhD graduates across MSC subject areas has changed over time. The analysis has two stages:
 
 1. exploratory analysis of historical subject trends;
-2. initial time-series modeling using Algebraic Geometry as a case study;
-3. rolling-window cross-validation and forecasting for all pure- and applied-mathematics subjects.
+2. rolling-window cross-validation and forecasting for all pure- and applied-mathematics subjects.
 
 ## Notebooks
 
