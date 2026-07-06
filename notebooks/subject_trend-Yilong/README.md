@@ -11,7 +11,6 @@ This folder studies how the distribution of mathematics PhD graduates across MSC
 | Notebook                                           | Description                                                               |
 | -------------------------------------------------- | ------------------------------------------------------------------------- |
 | [`subject_EDA.ipynb`](subject_EDA.ipynb)           | Visualizes historical changes in subject counts and percentage shares.    |
-| [`subject_predict.ipynb`](subject_predict.ipynb)   | Tests several forecasting models on MSC 14, Algebraic Geometry.           |
 | [`cross_validation.ipynb`](cross_validation.ipynb) | Selects forecasting models and produces coherent forecasts for 2025–2027. |
 
 ## Data
