@@ -172,6 +172,14 @@ The complete forecast table is exported as:
 ```text
 all_subject_share_and_derived_count_forecasts_2025_2027.csv
 ```
+### Figures
+Prediction for pure math students counts and share:
+<img width="1491" height="790" alt="pure_math_counts_predict" src="https://github.com/user-attachments/assets/4d862e08-4b80-4be2-a57d-ba4530ac00b0" />
+<img width="1491" height="790" alt="pure_math_share_predict" src="https://github.com/user-attachments/assets/97d10fbd-03a7-411b-ab09-d9ef611b844b" />
+
+Prediction for applied math students counts and share:
+<img width="1491" height="790" alt="applied_math_counts_predict" src="https://github.com/user-attachments/assets/ce9393e9-e673-4e4a-8315-3226cca22b2c" />
+<img width="1491" height="790" alt="applied_math_share_predict" src="https://github.com/user-attachments/assets/43d69263-a845-4f9e-95cf-2cc5d348ab7f" />
 
 ### Overall conclusions
 
