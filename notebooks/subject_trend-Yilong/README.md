@@ -58,20 +58,7 @@ Early-year percentages are unstable because relatively few graduates are recorde
 
 ---
 
-## 2. Initial Forecasting Models
-
-The initial modeling notebook uses MSC 14, Algebraic Geometry, as a case study. It models both:
-
-* annual graduate counts;
-* annual percentage shares within pure mathematics.
-
-The candidate methods include exponential smoothing, a linear trend, a fixed ARIMA model, and Auto ARIMA.
-
-A chronological train-test split shows that counts and percentage shares may favor different models. However, conclusions from one holdout period can depend strongly on the selected test years. The cross-validation notebook therefore evaluates models over multiple historical forecasting periods.
-
----
-
-## 3. Rolling-Window Cross-Validation
+## 2. Rolling-Window Cross-Validation
 
 The cross-validation analysis uses annual observations from **1960 through 2024**. We chose this range because the data are more complete and stable during this period.
 
@@ -123,7 +110,7 @@ Direct count forecasts are also evaluated as benchmarks. Fixed-alpha simple expo
 
 ---
 
-## 4. Coherent Forecasts for 2025–2027
+## 3. Coherent Forecasts for 2025–2027
 
 The final models are fitted using the most recent 20 years, **2005–2024**, matching the rolling cross-validation window.
 
@@ -181,7 +168,7 @@ Prediction for applied math students counts and share:
 <img width="1491" height="790" alt="applied_math_counts_predict" src="https://github.com/user-attachments/assets/ce9393e9-e673-4e4a-8315-3226cca22b2c" />
 <img width="1491" height="790" alt="applied_math_share_predict" src="https://github.com/user-attachments/assets/43d69263-a845-4f9e-95cf-2cc5d348ab7f" />
 
-### Overall conclusions
+## 4. Overall conclusions
 
 Taken together, these four figures suggest that the short-term forecasts are driven more by **continuation of recent structure** than by large changes in ranking.
 
