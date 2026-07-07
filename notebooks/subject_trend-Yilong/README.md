@@ -126,9 +126,10 @@ subject count = subject share × basket total / 100
 
 This guarantees that:
 
-* pure-mathematics shares sum to 100%;
-* applied-mathematics shares sum to 100%;
+* both pure-mathematics and shares sum to 100%;
 * derived subject counts sum exactly to their forecasted basket total.
+
+(Note that we still added separate count series prediction in the notebook as a comparison.)
 
 The forecasted pure-mathematics total increases from approximately **1,638 graduates in 2025** to **1,707 in 2027**. The applied-mathematics total remains approximately **1,535 graduates per year** under the selected model.
 
@@ -141,6 +142,11 @@ The five largest forecasted pure-mathematics subjects are:
 60 — Probability theory and stochastic processes
 05 — Combinatorics
 ```
+The prediction for the number of graduated students counts and share are below:
+<img width="1491" height="790" alt="pure_math_counts_predict" src="https://github.com/user-attachments/assets/4d862e08-4b80-4be2-a57d-ba4530ac00b0" />
+<img width="1491" height="790" alt="pure_math_share_predict" src="https://github.com/user-attachments/assets/97d10fbd-03a7-411b-ab09-d9ef611b844b" />
+
+
 
 The five largest forecasted applied-mathematics subjects are:
 
@@ -151,21 +157,16 @@ The five largest forecasted applied-mathematics subjects are:
 90 — Operations research and mathematical programming
 91 — Game theory, economics, and social sciences
 ```
+Prediction for applied math students counts and share:
+<img width="1491" height="790" alt="applied_math_counts_predict" src="https://github.com/user-attachments/assets/ce9393e9-e673-4e4a-8315-3226cca22b2c" />
+<img width="1491" height="790" alt="applied_math_share_predict" src="https://github.com/user-attachments/assets/43d69263-a845-4f9e-95cf-2cc5d348ab7f" />
 
 The complete forecast table is exported as:
 
 ```text
 all_subject_share_and_derived_count_forecasts_2025_2027.csv
 ```
-### Figures
-Prediction for pure math students counts and share:
-<img width="1491" height="790" alt="pure_math_counts_predict" src="https://github.com/user-attachments/assets/4d862e08-4b80-4be2-a57d-ba4530ac00b0" />
-<img width="1491" height="790" alt="pure_math_share_predict" src="https://github.com/user-attachments/assets/97d10fbd-03a7-411b-ab09-d9ef611b844b" />
-
-Prediction for applied math students counts and share:
-<img width="1491" height="790" alt="applied_math_counts_predict" src="https://github.com/user-attachments/assets/ce9393e9-e673-4e4a-8315-3226cca22b2c" />
-<img width="1491" height="790" alt="applied_math_share_predict" src="https://github.com/user-attachments/assets/43d69263-a845-4f9e-95cf-2cc5d348ab7f" />
-
+<!--
 ## 4. Overall conclusions
 
 Taken together, these four figures suggest that the short-term forecasts are driven more by **continuation of recent structure** than by large changes in ranking.
@@ -176,3 +177,4 @@ Taken together, these four figures suggest that the short-term forecasts are dri
 - Because the final workflow forecasts shares and totals separately, the resulting count forecasts are internally consistent and easier to interpret than independently forecasted subject counts.
 
 These figures therefore provide a compact visual summary of the final forecasting pipeline and its main substantive conclusions.
+-->
