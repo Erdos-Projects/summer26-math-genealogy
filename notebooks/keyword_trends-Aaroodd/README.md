@@ -20,7 +20,7 @@ keyword_trends-Aaroodd/
 ├── 03_model_v2.ipynb
 ├── images/                     # figures used in README
 ├── archive/
-│   ├── model_v1.ipynb          # superseded, kept for reference
+│   ├── models.ipynb          # previous models, kept for reference
 │   └── fasttextvlangdetect.ipynb  # not needed, kept for reference
 ├── lid.176.bin
 └── data/
