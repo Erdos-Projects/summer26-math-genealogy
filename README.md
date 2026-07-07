@@ -90,6 +90,7 @@ The distribution is highly right-skewed: most mathematicians have no listed stud
 (may add a few more analysis here if needed)
 
 ## Project Proposal
+<!--
 Based on the analysis above, we propose the following four problems/questions:
 I. How to fill in the missing subject code? - Osanda
 
@@ -98,7 +99,7 @@ II. What is the trend of key words in each subject for the next year/decade? - A
 III. Which subject will be the next “dominating” subject? - Yilong
 
 IV. How are the subject topics discributed in US states? - Jon
-
+-->
 ### Project I. Missing Subject Codes/Names Imputation 
 The dataset had 136,040 entries with subject missing. The following missing value imputation procedure has been taken to decrease the number of entries with missing subjects. Every subject comes with a subject code (varying between 0 and 97) and subject name. 
 
@@ -141,11 +142,12 @@ More details and notrbooks in [notebooks/keyword_trends](notebooks/keyword_trend
 
 One direction of this project is to study the long-term evolution of mathematical research subjects in the Mathematics Genealogy Project. Instead of only asking which subjects have the largest raw number of students, we aim to understand how subjects emerge, become dominant, decline, and interact with one another through academic genealogy. 
 
-First, we will analyze _subject dominance_ over time. For each year, we plan to compute the proportion of mathematicians belonging to each `subject` and use these proportions to study changes in subject rankings. Possible outputs include a subject-share heatmap, rankings of the most common subjects by decade, top-10 subject turnover across decades, and entropy-based measures of subject diversity. 
+First, we will analyze _subject dominance_ over time. For each year, we plan to compute the proportion of number of graduate students belonging to each `subject` in the pure or applied math baskets, and use these proportions to study changes in subject rankings. We analyze them as time series during 1960-2024, and use Exponential Smoothing and ARIMA to predict their distributions in 2024-2027. More details see [notebooks/subject_trend-Yilong](notebooks/subject_trend-Yilong)
+<!-- Possible outputs include a subject-share heatmap, rankings of the most common subjects by decade, top-10 subject turnover across decades, and entropy-based measures of subject diversity. 
 
 Second, we will study _subject life cycles_. For each `subject`, we plan to estimate an emergence year, peak year, recent momentum, decline ratio, and general status. Possible outputs include a life-cycle table for all MSC subjects, a birth-versus-peak-year scatterplot, and rankings of rising and declining subjects. 
-
-Third, we will use the advisor-student structure of the dataset to study _genealogical transmission_ between subjects. We plan to construct a $63 \times 63$ transition matrix, where each entry measures how often advisors in one subject produce students in another subject. This can also be computed over different time windows to see how field transitions change historically. From this matrix, we can compute self-retention rankings, net inflow and outflow rankings, top migration flows between subjects, and persistence of subjects across multiple generations. 
+-->
+Second, we will use the advisor-student structure of the dataset to study _genealogical transmission_ between subjects. We plan to construct a $63 \times 63$ transition matrix, where each entry measures how often advisors in one subject produce students in another subject. This can also be computed over different time windows to see how field transitions change historically. From this matrix, we can compute self-retention rankings, net inflow and outflow rankings, top migration flows between subjects, and persistence of subjects across multiple generations.  More details see [notebooks/subject_transition-Yilong](notebooks/subject_transition-Yilong)
 
 ### Project IV. Geography analysis 
 
