@@ -7,7 +7,7 @@ This repository contains the data and analysis for the Summer 2026 Mathematics G
 1. Study the trend of mathematics in a given field
 2. Predict the research subject (MSC code) of a mathematician depending on their descendants/relatives.
 
-## Data Scraping (see folder src)
+## Data Scraping
 
 We scraped records from the [Mathematics Genealogy Project](https://www.mathgenealogy.org/) and saved the results in `data/raw/data-new.json`.
 
@@ -17,9 +17,9 @@ We scraped records from the [Mathematics Genealogy Project](https://www.mathgene
 
 The two records that initially produced fetching errors were later manually retrieved and added to the dataset.
 
-For scrapping we used a slightly modified version of the script given in https://github.com/j2kun/math-genealogy-scraper.git. The modified code can be found in `src/data/scraper`.
+For scrapping we used a slightly modified version of the script given in https://github.com/j2kun/math-genealogy-scraper.git. The modified code can be found in [src/data/scraper](src/data/scraper).
 
-## Initial Data Cleaning (see folder notebooks)
+## Data Cleaning 
 
 Each record contains the following fields:
 
