@@ -148,31 +148,124 @@ cached files:
 - Top bigrams by total count: `differential_equation` (1,002),
   `time_series` (758), `high_dimensional` (751), `machine_learning` (602),
   `neural_network` (447)
+## Modeling (`03_model_final.ipynb`)
 
-**Modeling** (`model.ipynb`):
-- Features: share_lag1, share_lag2, share_lag3, slope_3yr, slope_5yr, specificity
-- Target: share at t+1
-- Split: train < 2013, test 2013-2022 (time-based, no random split, try with different splits)
-- Baseline: naive lag-1 (predict next year = this year)
-- Preliminary models: Ridge regression (better), GradientBoostingRegressor (marginal loss)
-- Leakage check: shuffled-target RMSE >> model RMSE -- clean
-- Later will try better models or improved features
-## Results (check notebook for up to date results)
+Predicts next-year change in a word's share of thesis titles within a
+subject, for words already flagged as rising by the EDA method.
 
-| Metric | Baseline (lag-1) | Ridge | GBR |
-|---|---|---|---|
-| RMSE (test) | 0.007634 | 0.006281 | 0.006348 |
-| MAE (test) | 0.004355 | 0.003623 | 0.003692 |
+**Target:** `dshare = share(t+1) - share(t)`. Modeling the change instead
+of the raw share means metrics measure real predictive skill, not just
+rewarding the model for copying last year's number.
 
-- Direction accuracy (test): 69.0%
-- NDCG@all (test, per year): 0.958 mean
-- NDCG@5 (2024 holdout, 60 subjects): 0.858 mean
-- Direction accuracy (2024 holdout): 70.7%
-- 3 subjects excluded from 2024 evaluation: insufficient 2024 titles (different for different years)
+**Features** (all computed leak-free, using data from years <= t only):
+- `share_lag1`, `share_lag2`, `share_lag3`: word share in each of the last
+  three years
+- `slope_3yr`, `slope_5yr`: linear share trend over the last 3 and 5 years
+- `accel`: `slope_3yr - slope_5yr` (short-term vs long-term trend gap)
+- `vol_5yr`: rolling std of share over 5 years
+- `spec_cum`: cumulative subject-specificity ratio
+- `word_age`: years since the word first appeared in the subject
+- `log_volume`: log of that subject-year's total title-word volume
 
-Key finding: Ridge beats GBR -- relationship is approximately linear. Lag features
-dominate (lag2 highest coefficient). slope_3yr adds signal; specificity does not
-predict share level but is useful for candidate filtering.
+**Leak-free design:**
+- Rising-word candidates selected using only data up to `SELECT_END`, never
+  from the test window. Confirmed by a selection-leak probe that shows how
+  many candidates would have changed if future data had been allowed.
+- Panel is zero-filled: a year where a word doesn't appear counts as
+  share = 0, not a skipped row.
+- Sample weights = next-year title-word volume, so noisy small-subject-years
+  count less.
 
-Model undershoots accelerating trends (deep learning surge post-2015) and misses
-inflection points on declining words (privacy in CS).
+**Evaluation:** expanding-window time-series cross-validation across four
+folds. Selection and feature panel are rebuilt inside each fold so nothing
+downstream ever touches its own test window. Two additional leakage checks
+are run on the final fold:
+- Shuffled-target RMSE must be at or above the zero-change RMSE (features
+  should not predict a randomized target).
+- Overlap between clean and full-window candidate selection is reported, to
+  quantify how much a naive setup would have quietly leaked.
+
+**Models compared** (all evaluated on the identical CV folds):
+
+| Model | Type | Description |
+|---|---|---|
+| `Dummy (mean)` | Trivial | `DummyRegressor(strategy="mean")` |
+| `Zero-change` | Trivial (domain) | Predicts `dshare = 0` (persistence) |
+| `Momentum (slope_3yr)` | Domain baseline | Predicts `dshare = slope_3yr` |
+| `Ridge (weighted)` | Linear | Standardized features, sample-weighted |
+| `HistGBR (weighted)` | Tree-based | Histogram gradient boosting |
+
+KPI definitions and improvement directions are in `kpis.md`.
+
+## Results
+
+CV means and standard deviations across four expanding-window folds
+(train up to split_year, test the next 10 years). Ridge is the primary
+model; trivial baselines (Dummy, Zero-change) and the domain baseline
+(Momentum) confirm the model is worth the extra features.
+
+| Model | RMSE | MAE | Direction acc | NDCG |
+|---|---|---|---|---|
+| Dummy (mean) | 0.0099 ± 0.0008 | 0.0057 ± 0.0005 | 49.3% ± 0.6% | 0.810 ± 0.003 |
+| Zero-change | 0.0099 ± 0.0008 | 0.0057 ± 0.0005 | 0.0% ± 0.0% | 0.810 ± 0.003 |
+| Momentum (slope_3yr) | 0.0132 ± 0.0010 | 0.0078 ± 0.0006 | 32.9% ± 0.9% | 0.724 ± 0.002 |
+| **Ridge (weighted)** | **0.0078 ± 0.0007** | **0.0049 ± 0.0004** | **69.8% ± 0.6%** | **0.913 ± 0.006** |
+| HistGBR (weighted) | 0.0082 ± 0.0007 | 0.0050 ± 0.0004 | 69.7% ± 0.3% | 0.899 ± 0.009 |
+
+Full table saved to `data/kpi_summary_v5_final.csv`.
+
+![KPI comparison across models](images/model_kpi_comparison.png)
+*Model KPIs across four time-series CV folds (mean +/- std). Ridge and
+HistGBR are colored; the three baselines are gray. Lower is better for
+RMSE and MAE, higher for direction accuracy and NDCG.*
+
+![Ridge feature coefficients](images/model_feature_coefficients.png)
+*Ridge coefficients on standardized features, final CV fold. Lag features
+dominate the signal; specificity and volume features add little to
+share-level prediction (but specificity is essential for the upstream
+candidate filter).*
+
+![Residual diagnostics](images/model_residual_diagnostics.png)
+*Left: residual vs predicted, no obvious slope. Middle: mean residual by
+test year, close to zero across the test window, no drift. Right: residual
+distribution is symmetric with light tails.*
+
+**Key findings:**
+- Ridge beats HistGBR by a small margin on all four KPIs. The
+  relationship is approximately linear once share-lag features are
+  included; the tree-based model does not find useful nonlinear structure
+  here.
+- Ridge cuts RMSE by about 21% vs the trivial baselines (0.0078 vs 0.0099)
+  and lifts direction accuracy from ~50% to ~70%.
+- Momentum (`slope_3yr` alone) is worse than trivial: it has higher RMSE
+  and gets the direction wrong more often than right (32.9%). Recent slope
+  is a useful ingredient inside the model, but on its own it over-reacts
+  to noise.
+- Zero-change scores 0% direction accuracy by construction (it never picks
+  a nonzero sign), not by failure. Dummy and Zero-change tie on RMSE/MAE/NDCG
+  because they both predict a value very near zero on this near-zero-mean
+  target.
+- Lag features carry most of the predictive signal; recent slope adds a
+  small increment. Specificity does not predict share level, but is what
+  makes upstream candidate selection work.
+
+## Watchlist
+
+The trained model is applied one step past `TREND_END` to produce a
+per-subject watchlist of words most likely to keep rising. This is the only
+place full data is allowed on the selection side, since we are making a
+forward prediction here rather than evaluating.
+
+![Predicted rising words 2024](images/watchlist_2022_top_subjects.png)
+*Predicted top rising words as of 2024 (TREND_END) in the five highest-volume
+subjects, ranked by enriched score from the EDA method applied to the full
+data window (selection uses all data up to TREND_END, since this is a
+forward prediction, not evaluation). The full watchlist with the model's
+predicted change-in-share is saved to `data/watchlist_2022_v5_final.csv`.*
+
+![Actual rising words 2022](images/actual_rising_2022_top_subjects.png)
+*Actual top rising words as of 2022 in the same five subjects, using the
+same enriched score for direct comparison. Words present in both plots
+(e.g. `deep_learning`, `machine_learning` in Computer science) have
+sustained rising signal across two years; words new to the 2024 plot are
+newly emerging candidates.*
