@@ -142,11 +142,10 @@ The five largest forecasted pure-mathematics subjects are:
 60 — Probability theory and stochastic processes
 05 — Combinatorics
 ```
-The prediction for the number of graduated students counts and share are below:
-<img width="1491" height="790" alt="pure_math_counts_predict" src="https://github.com/user-attachments/assets/4d862e08-4b80-4be2-a57d-ba4530ac00b0" />
+Their percentages among pure math subjects are shown below:
+
 <img width="1491" height="790" alt="pure_math_share_predict" src="https://github.com/user-attachments/assets/97d10fbd-03a7-411b-ab09-d9ef611b844b" />
-
-
+We predict in 2027, subject 35 has share 10.56%, subject 11 has share 9.18%, subject 14 has share 8.83%, subject 60 has share 8.30%, subject 05 has share 8.29%.
 
 The five largest forecasted applied-mathematics subjects are:
 
@@ -157,8 +156,12 @@ The five largest forecasted applied-mathematics subjects are:
 90 — Operations research and mathematical programming
 91 — Game theory, economics, and social sciences
 ```
-Prediction for applied math students counts and share:
+Their percentages among applied math subjects are shown below:
 <img width="1491" height="790" alt="applied_math_counts_predict" src="https://github.com/user-attachments/assets/ce9393e9-e673-4e4a-8315-3226cca22b2c" />
+We predict in 2027, subject 68 has share 32.28%, subject 62 has share 21.76%, subject 65 has share 9.95%, subject 90 has share 6.27%, subject 91 has share 5.36%.
+
+The total number of graduated students forecasts are shown below:
+<img width="1491" height="790" alt="pure_math_counts_predict" src="https://github.com/user-attachments/assets/4d862e08-4b80-4be2-a57d-ba4530ac00b0" />
 <img width="1491" height="790" alt="applied_math_share_predict" src="https://github.com/user-attachments/assets/43d69263-a845-4f9e-95cf-2cc5d348ab7f" />
 
 The complete forecast table is exported as:
