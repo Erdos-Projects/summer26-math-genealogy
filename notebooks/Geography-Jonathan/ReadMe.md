@@ -217,7 +217,7 @@ The model includes
 * state × year interactions,
 * an offset for total dissertations.
 
-This allows formal tests of questions such as whether Statistics has been growing faster in one state than another after accounting for differences in overall dissertation production.
+This allows formal tests of questions such as whether Statistics has been growing faster in one state than another, or compared to the whole country, after accounting for differences in overall dissertation production.
 
 Summarizing inference
 
