@@ -1,0 +1,196 @@
+record_type,basket,subject_code,year,value_percent,model
+basket_ratio_forecast,Applied,,2025,51.265476615665705,100 minus pure ratio
+basket_ratio_forecast,Applied,,2026,51.265476615665705,100 minus pure ratio
+basket_ratio_forecast,Applied,,2027,51.265476615665705,100 minus pure ratio
+basket_ratio_forecast,Pure,,2025,48.734523384334295,"ARIMA(0,1,1)"
+basket_ratio_forecast,Pure,,2026,48.734523384334295,"ARIMA(0,1,1)"
+basket_ratio_forecast,Pure,,2027,48.734523384334295,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,62,2025,21.762499849824206,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,62,2026,21.762499849824206,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,62,2027,21.762499849824206,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,65,2025,9.950493443666964,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,65,2026,9.950493443666964,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,65,2027,9.950493443666964,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,68,2025,32.27946312641559,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,68,2026,32.27946312641559,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,68,2027,32.27946312641559,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,70,2025,0.47322960622507837,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,70,2026,0.47322960622507837,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,70,2027,0.47322960622507837,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,74,2025,1.710880826343891,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,74,2026,1.710880826343891,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,74,2027,1.710880826343891,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,76,2025,3.015021341037048,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,76,2026,3.015021341037048,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,76,2027,3.015021341037048,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,78,2025,0.2671666802927054,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,78,2026,0.2671666802927054,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,78,2027,0.2671666802927054,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,80,2025,0.21742725740582264,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,80,2026,0.21742725740582264,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,80,2027,0.21742725740582264,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,81,2025,2.314581124339907,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,81,2026,2.314581124339907,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,81,2027,2.314581124339907,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,82,2025,0.7816479796903293,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,82,2026,0.7816479796903293,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,82,2027,0.7816479796903293,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,83,2025,0.9024707337372798,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,83,2026,0.9024707337372798,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,83,2027,0.9024707337372798,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,85,2025,1.0295784093730478,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,85,2026,1.0295784093730478,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,85,2027,1.0295784093730478,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,86,2025,0.3988080974757581,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,86,2026,0.3988080974757581,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,86,2027,0.3988080974757581,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,90,2025,6.267993199044665,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,90,2026,6.267993199044665,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,90,2027,6.267993199044665,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,91,2025,5.357012677320516,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,91,2026,5.357012677320516,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,91,2027,5.357012677320516,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,92,2025,4.534188588189417,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,92,2026,4.534188588189417,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,92,2027,4.534188588189417,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,93,2025,2.9327850646849654,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,93,2026,2.9327850646849654,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,93,2027,2.9327850646849654,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,94,2025,3.67672705684826,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,94,2026,3.67672705684826,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,94,2027,3.67672705684826,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,97,2025,2.128024938084551,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,97,2026,2.128024938084551,"ARIMA(0,1,1)"
+subject_share_forecast,Applied,97,2027,2.128024938084551,"ARIMA(0,1,1)"
+subject_share_forecast,Pure,00,2025,0.9164871933437113,Holt damped
+subject_share_forecast,Pure,00,2026,0.8626132348763322,Holt damped
+subject_share_forecast,Pure,00,2027,0.8088217485553322,Holt damped
+subject_share_forecast,Pure,01,2025,0.01416629409098863,Holt damped
+subject_share_forecast,Pure,01,2026,0.0,Holt damped
+subject_share_forecast,Pure,01,2027,0.0,Holt damped
+subject_share_forecast,Pure,03,2025,3.728068074744282,Holt damped
+subject_share_forecast,Pure,03,2026,3.719072188868579,Holt damped
+subject_share_forecast,Pure,03,2027,3.710593062081422,Holt damped
+subject_share_forecast,Pure,05,2025,8.280404508583729,Holt damped
+subject_share_forecast,Pure,05,2026,8.283888684533643,Holt damped
+subject_share_forecast,Pure,05,2027,8.285087245660984,Holt damped
+subject_share_forecast,Pure,06,2025,0.4042424633759658,Holt damped
+subject_share_forecast,Pure,06,2026,0.3967034083284207,Holt damped
+subject_share_forecast,Pure,06,2027,0.38911650815020793,Holt damped
+subject_share_forecast,Pure,08,2025,0.32307462799339043,Holt damped
+subject_share_forecast,Pure,08,2026,0.3204430900197952,Holt damped
+subject_share_forecast,Pure,08,2027,0.31775569568422674,Holt damped
+subject_share_forecast,Pure,11,2025,9.002465940858652,Holt damped
+subject_share_forecast,Pure,11,2026,9.091782183492608,Holt damped
+subject_share_forecast,Pure,11,2027,9.178697652671346,Holt damped
+subject_share_forecast,Pure,12,2025,0.28735606248936707,Holt damped
+subject_share_forecast,Pure,12,2026,0.28706162117090717,Holt damped
+subject_share_forecast,Pure,12,2027,0.286721648769643,Holt damped
+subject_share_forecast,Pure,13,2025,2.1292732029488413,Holt damped
+subject_share_forecast,Pure,13,2026,2.131192412956781,Holt damped
+subject_share_forecast,Pure,13,2027,2.1323190559384404,Holt damped
+subject_share_forecast,Pure,14,2025,8.48517566833523,Holt damped
+subject_share_forecast,Pure,14,2026,8.657610581270013,Holt damped
+subject_share_forecast,Pure,14,2027,8.827324532734853,Holt damped
+subject_share_forecast,Pure,15,2025,1.0482526750413779,Holt damped
+subject_share_forecast,Pure,15,2026,1.0450282355262392,Holt damped
+subject_share_forecast,Pure,15,2027,1.0415949775358488,Holt damped
+subject_share_forecast,Pure,16,2025,2.051629588293645,Holt damped
+subject_share_forecast,Pure,16,2026,2.02666057791876,Holt damped
+subject_share_forecast,Pure,16,2027,2.0062961781104387,Holt damped
+subject_share_forecast,Pure,17,2025,1.2870966299290838,Holt damped
+subject_share_forecast,Pure,17,2026,1.2989124040959747,Holt damped
+subject_share_forecast,Pure,17,2027,1.3099497966912312,Holt damped
+subject_share_forecast,Pure,18,2025,2.0766169670733206,Holt damped
+subject_share_forecast,Pure,18,2026,2.1435829349671107,Holt damped
+subject_share_forecast,Pure,18,2027,2.2097544252135424,Holt damped
+subject_share_forecast,Pure,19,2025,0.3050466531299857,Holt damped
+subject_share_forecast,Pure,19,2026,0.2842305745098831,Holt damped
+subject_share_forecast,Pure,19,2027,0.26415482844656857,Holt damped
+subject_share_forecast,Pure,20,2025,3.9045580437123375,Holt damped
+subject_share_forecast,Pure,20,2026,3.852705052817768,Holt damped
+subject_share_forecast,Pure,20,2027,3.8002810849633013,Holt damped
+subject_share_forecast,Pure,22,2025,0.9501460308507923,Holt damped
+subject_share_forecast,Pure,22,2026,0.9505367705227987,Holt damped
+subject_share_forecast,Pure,22,2027,0.950667057191284,Holt damped
+subject_share_forecast,Pure,26,2025,0.41820833237641414,Holt damped
+subject_share_forecast,Pure,26,2026,0.4176745717077456,Holt damped
+subject_share_forecast,Pure,26,2027,0.4171674431252105,Holt damped
+subject_share_forecast,Pure,28,2025,0.37949389231139,Holt damped
+subject_share_forecast,Pure,28,2026,0.37948698649526874,Holt damped
+subject_share_forecast,Pure,28,2027,0.37939876193710775,Holt damped
+subject_share_forecast,Pure,30,2025,1.1410553397493755,Holt damped
+subject_share_forecast,Pure,30,2026,1.1121455116206551,Holt damped
+subject_share_forecast,Pure,30,2027,1.0831402373660268,Holt damped
+subject_share_forecast,Pure,31,2025,0.18300842726067193,Holt damped
+subject_share_forecast,Pure,31,2026,0.1829587818835103,Holt damped
+subject_share_forecast,Pure,31,2027,0.18288397321042887,Holt damped
+subject_share_forecast,Pure,32,2025,0.836585008376848,Holt damped
+subject_share_forecast,Pure,32,2026,0.8225175837185148,Holt damped
+subject_share_forecast,Pure,32,2027,0.8085277708681745,Holt damped
+subject_share_forecast,Pure,33,2025,0.2684349796908049,Holt damped
+subject_share_forecast,Pure,33,2026,0.2610779993789484,Holt damped
+subject_share_forecast,Pure,33,2027,0.25370921786495493,Holt damped
+subject_share_forecast,Pure,34,2025,1.4825253030319172,Holt damped
+subject_share_forecast,Pure,34,2026,1.4547980202717339,Holt damped
+subject_share_forecast,Pure,34,2027,1.4284397917202083,Holt damped
+subject_share_forecast,Pure,35,2025,10.544001198186141,Holt damped
+subject_share_forecast,Pure,35,2026,10.555032458476788,Holt damped
+subject_share_forecast,Pure,35,2027,10.562522060493967,Holt damped
+subject_share_forecast,Pure,37,2025,5.276796035877777,Holt damped
+subject_share_forecast,Pure,37,2026,5.306139576444093,Holt damped
+subject_share_forecast,Pure,37,2027,5.334195351572612,Holt damped
+subject_share_forecast,Pure,39,2025,0.19793069306453004,Holt damped
+subject_share_forecast,Pure,39,2026,0.184786360414476,Holt damped
+subject_share_forecast,Pure,39,2027,0.17166767453803206,Holt damped
+subject_share_forecast,Pure,40,2025,0.09982099552581007,Holt damped
+subject_share_forecast,Pure,40,2026,0.09344465524828498,Holt damped
+subject_share_forecast,Pure,40,2027,0.08708043977080768,Holt damped
+subject_share_forecast,Pure,41,2025,0.5184322154004991,Holt damped
+subject_share_forecast,Pure,41,2026,0.4971676390588721,Holt damped
+subject_share_forecast,Pure,41,2027,0.47636443736740613,Holt damped
+subject_share_forecast,Pure,42,2025,1.4980743722639174,Holt damped
+subject_share_forecast,Pure,42,2026,1.5001073218640566,Holt damped
+subject_share_forecast,Pure,42,2027,1.501578383620185,Holt damped
+subject_share_forecast,Pure,43,2025,0.4614789322686215,Holt damped
+subject_share_forecast,Pure,43,2026,0.4572854862797243,Holt damped
+subject_share_forecast,Pure,43,2027,0.453014511176274,Holt damped
+subject_share_forecast,Pure,44,2025,0.12902842990722602,Holt damped
+subject_share_forecast,Pure,44,2026,0.12894931373509178,Holt damped
+subject_share_forecast,Pure,44,2027,0.12886128685468456,Holt damped
+subject_share_forecast,Pure,45,2025,0.12105517299448093,Holt damped
+subject_share_forecast,Pure,45,2026,0.11274130528724559,Holt damped
+subject_share_forecast,Pure,45,2027,0.10444454952662764,Holt damped
+subject_share_forecast,Pure,46,2025,3.3281277224874137,Holt damped
+subject_share_forecast,Pure,46,2026,3.2858358077701157,Holt damped
+subject_share_forecast,Pure,46,2027,3.2430473147505214,Holt damped
+subject_share_forecast,Pure,47,2025,2.044219955815774,Holt damped
+subject_share_forecast,Pure,47,2026,2.0285481352546526,Holt damped
+subject_share_forecast,Pure,47,2027,2.0125178075109766,Holt damped
+subject_share_forecast,Pure,49,2025,1.4336076575223495,Holt damped
+subject_share_forecast,Pure,49,2026,1.4209190127445344,Holt damped
+subject_share_forecast,Pure,49,2027,1.408755374598754,Holt damped
+subject_share_forecast,Pure,51,2025,1.1841134514298415,Holt damped
+subject_share_forecast,Pure,51,2026,1.1838476066502424,Holt damped
+subject_share_forecast,Pure,51,2027,1.183407864243223,Holt damped
+subject_share_forecast,Pure,52,2025,0.9379493807862239,Holt damped
+subject_share_forecast,Pure,52,2026,0.938119952068669,Holt damped
+subject_share_forecast,Pure,52,2027,0.9380875479744247,Holt damped
+subject_share_forecast,Pure,53,2025,5.967801394879109,Holt damped
+subject_share_forecast,Pure,53,2026,6.037777715036275,Holt damped
+subject_share_forecast,Pure,53,2027,6.106106644921833,Holt damped
+subject_share_forecast,Pure,54,2025,0.5079205625990642,Holt damped
+subject_share_forecast,Pure,54,2026,0.47519214646005825,Holt damped
+subject_share_forecast,Pure,54,2027,0.442600597462994,Holt damped
+subject_share_forecast,Pure,55,2025,3.3405040820095073,Holt damped
+subject_share_forecast,Pure,55,2026,3.4190407465839043,Holt damped
+subject_share_forecast,Pure,55,2027,3.496450909604281,Holt damped
+subject_share_forecast,Pure,57,2025,2.9580988489081874,Holt damped
+subject_share_forecast,Pure,57,2026,2.9976867750912333,Holt damped
+subject_share_forecast,Pure,57,2027,3.036432679175504,Holt damped
+subject_share_forecast,Pure,58,2025,0.9399818272528572,Holt damped
+subject_share_forecast,Pure,58,2026,0.9377801950740023,Holt damped
+subject_share_forecast,Pure,58,2027,0.9353877318570644,Holt damped
+subject_share_forecast,Pure,60,2025,8.607685163228545,Holt damped
+subject_share_forecast,Pure,60,2026,8.456914379505696,Holt damped
+subject_share_forecast,Pure,60,2027,8.305074138489042,Holt damped
