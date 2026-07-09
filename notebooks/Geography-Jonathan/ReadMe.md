@@ -1,82 +1,84 @@
-Summary of Data-States.ipynb
-Overview
+# Summary of Data-States.ipynb
+
+## Overview
 
 This notebook studies the geographic distribution of mathematical research subjects across the United States using data from the Mathematics Genealogy Project. The overall goal is to understand how dissertation subjects vary across states and over time, first through exploratory visualization, then through predictive modeling, and finally through formal statistical inference.
 
 The notebook naturally divides into four major parts:
 
-Data preparation
-Exploratory data analysis
-Predictive modeling
-Inferential analysis
-1. Data preparation
+# Data preparation
+# Exploratory data analysis
+# Predictive modeling
+# Inferential analysis
+
+## 1. Data preparation
 
 The original Mathematics Genealogy Project data identifies universities but not U.S. states. The notebook therefore begins by constructing a state variable.
 
 The preprocessing stage:
 
-imports the raw JSON data,
-matches universities to states,
-uses dictionaries and fuzzy matching where necessary,
-manually fills remaining unmatched institutions,
-removes dissertations outside the United States,
-checks for remaining missing values,
-creates a cleaned data set suitable for analysis.
+* imports the raw JSON data,
+* matches universities to states,
+* uses dictionaries and fuzzy matching where necessary,
+* manually fills remaining unmatched institutions,
+* removes dissertations outside the United States,
+* checks for remaining missing values,
+* creates a cleaned data set suitable for analysis.
 
 At the end of this section every dissertation has
 
-year
-state
-subject
+* year
+* state
+* subject
 
 which become the primary variables used throughout the notebook.
 
-2. Exploratory Data Analysis (EDA)
+## 2. Exploratory Data Analysis (EDA)
 
 The next section explores the cleaned data without fitting statistical models.
 
 The notebook computes dissertation counts by
 
-year,
-state,
-subject,
-and combinations of all three.
+* year,
+* state,
+* subject,
+* and combinations of all three.
 
 Several visualizations are produced, including
 
-subject distributions within each state,
-state distributions within each subject,
-histograms,
-pie charts,
-yearly dissertation counts.
+* subject distributions within each state,
+* state distributions within each subject,
+* histograms,
+* pie charts,
+* yearly dissertation counts.
 
 An important observation is that many states contain no dissertations in certain subjects, producing numerous structural zeros. This motivates later modeling decisions.
 
 Because the early decades contain very sparse observations, dissertations prior to 1950 are removed before predictive modeling begins.
 
-3. Predictive modeling
+## 3. Predictive modeling
 
 The notebook first approaches the problem as one of prediction.
 
 The response variable is the dissertation subject, while the predictors are
 
-state
-year
+* state
+* year
 
 A multinomial logistic regression model is fit using scikit-learn.
 
 The notebook includes
 
-train/test splitting,
-cross-validation,
-model evaluation,
-prediction of subject probabilities,
-comparison with a naive baseline.
+* train/test splitting,
+* cross-validation,
+* model evaluation,
+* prediction of subject probabilities,
+* comparison with a naive baseline.
 
 The accompanying discussion notes that random guessing among roughly sixty subjects would have
 
-accuracy near 2%
-log loss around log(60),
+* accuracy near 2%
+* log loss around log(60),
 
 whereas the fitted multinomial model performs substantially better, indicating that state and year contain useful predictive information.
 
@@ -84,16 +86,16 @@ Predicting future subject distributions
 
 Using the fitted multinomial model, the notebook predicts probabilities for every
 
-state,
-year,
-subject
+* state,
+* year,
+* subject
 
 combination.
 
 Examples include predicting
 
-California in 2025
-complete prediction grids for every state and year.
+* California in 2025
+* complete prediction grids for every state and year.
 
 These predicted probabilities are treated as estimates of future subject distributions.
 
@@ -103,12 +105,12 @@ A large portion of the notebook visualizes these predicted probabilities.
 
 Examples include
 
-heat maps of predicted subject prevalence,
-heat maps ordered alphabetically,
-reordered heat maps based on intensity,
-maps of which state is predicted to dominate a given subject,
-comparisons using proportions,
-comparisons using total dissertation counts instead of proportions.
+* heat maps of predicted subject prevalence,
+* heat maps ordered alphabetically,
+* reordered heat maps based on intensity,
+* maps of which state is predicted to dominate a given subject,
+* comparisons using proportions,
+* comparisons using total dissertation counts instead of proportions.
 
 These figures illustrate how mathematical specialties shift geographically over time.
 
@@ -118,9 +120,9 @@ The notebook next studies changes in predicted probabilities.
 
 It investigates questions such as
 
-Which states gained the most in a given subject?
-Which subjects changed the most within a state?
-Which states experienced the largest changes overall?
+* Which states gained the most in a given subject?
+* Which subjects changed the most within a state?
+* Which states experienced the largest changes overall?
 
 Several approaches are considered.
 
@@ -134,16 +136,16 @@ The notebook introduces several measures of volatility.
 
 Examples include
 
-standard deviation of predicted probabilities,
-year-to-year changes,
-changes in complete subject distributions.
+* standard deviation of predicted probabilities,
+* year-to-year changes,
+* changes in complete subject distributions.
 
 These analyses identify
 
-volatile subjects,
-volatile states,
-(relatively) rapidly changing research areas,
-states whose mathematical focus shifted substantially over time.
+* volatile subjects,
+* volatile states,
+* (relatively) rapidly changing research areas,
+* states whose mathematical focus shifted substantially over time.
 
 
 Nonlinear multinomial model
@@ -152,7 +154,7 @@ The notebook then considers a more flexible predictive model that allows nonline
 
 Cross-validation shows modest improvement over the simpler multinomial regression, suggesting that some subject trends evolve in more complex ways than a straight-line model can capture.
 
-4. Inferential analysis
+## 4. Inferential analysis
 
 The final section shifts from prediction to statistical inference.
 
@@ -170,9 +172,9 @@ Building count data
 
 The notebook first constructs complete counts for every combination of
 
-year,
-state,
-subject.
+* year,
+* state,
+* subject.
 
 Missing combinations are explicitly filled with zeros so that every possible state-year-subject combination is represented.
 
@@ -192,10 +194,10 @@ The first Poisson model analyzes all subjects simultaneously.
 
 This model estimates
 
-baseline subject frequencies,
-time trends,
-differences among states,
-interactions between state and year.
+* baseline subject frequencies,
+* time trends,
+* differences among states,
+* interactions between state and year.
 
 These interaction terms indicate whether individual states are changing faster or slower than the reference state.
 
@@ -215,10 +217,10 @@ A Poisson regression is fit specifically for Statistics dissertations.
 
 The model includes
 
-state,
-year,
-state × year interactions,
-an offset for total dissertations.
+* state,
+* year,
+* state × year interactions,
+* an offset for total dissertations.
 
 This allows formal tests of questions such as whether Statistics has been growing faster in one state than another after accounting for differences in overall dissertation production.
 
@@ -228,16 +230,16 @@ Because the regression output contains over one hundred coefficients, the notebo
 
 This table summarizes, for every state,
 
-the estimated annual trend,
-the difference from the reference state,
-statistical significance,
-and confidence intervals,
+* the estimated annual trend,
+* the difference from the reference state,
+* statistical significance,
+* and confidence intervals,
 
 making it much easier to identify states with unusually rapid increases or decreases in Statistics dissertations.
 
 
 
-Summary. 
+## Summary. 
 
 The notebook does the following:
 
@@ -249,3 +251,8 @@ Quantify changes and volatility across states and subjects.
 Improve predictive modeling with nonlinear time effects.
 Transition from prediction to inference using Poisson generalized linear models with offsets.
 Perform formal hypothesis testing on changes in dissertation subject proportions, culminating in a state-by-state analysis of the growth of Statistics dissertations.
+
+
+
+
+
