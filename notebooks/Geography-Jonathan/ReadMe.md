@@ -4,12 +4,7 @@
 
 This notebook studies the geographic distribution of mathematical research subjects across the United States using data from the Mathematics Genealogy Project. The overall goal is to understand how dissertation subjects vary across states and over time, first through exploratory visualization, then through predictive modeling, and finally through formal statistical inference.
 
-The notebook naturally divides into four major parts:
-
-# Data preparation
-# Exploratory data analysis
-# Predictive modeling
-# Inferential analysis
+The notebook naturally divides into four major parts: Data preparation, Exploratory data analysis, Predictive modeling, and Inferential analysis. 
 
 ## 1. Data preparation
 
