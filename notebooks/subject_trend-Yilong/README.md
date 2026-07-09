@@ -44,7 +44,6 @@ pure/applied basket ratio among all classified mathematics records
 These produce 44 pure-subject share series, 19 applied-subject share series, and 1 pure/applied basket-ratio series. Our goal is to predict the short-term behavior of these time series. 
 
 Initial tests on selected time series showed that Simple Exponential Smoothing (SES) performs reasonably well, so we treat it as a baseline model. In addition, we include Double Exponential Smoothing (Holt), Auto ARIMA, and ARIMA(0,1,1). Note that the last one is closely related to SES, but it is formulated as a statistical time-series model.
----
 
 ## Model-selection notebook
 
@@ -70,12 +69,11 @@ The selected models are:
 
 
 Final forecasts are fitted using the most recent 20 completed years, 2005–2024.
-![pure and applied math ratio](image.png)
+<img width="1288" height="690" alt="image" src="https://github.com/user-attachments/assets/92a99e6f-352b-442b-a09c-d2379b8b40bf" />
 
-![Top 5 pure math subjects](image-1.png)
+<img width="1285" height="690" alt="image-1" src="https://github.com/user-attachments/assets/2598812c-4b58-4060-8f98-2df4ce36e733" />
 
-![Top 5 applied math subjects](image-2.png)
-
+<img width="1283" height="690" alt="image-2" src="https://github.com/user-attachments/assets/6e5b4fc0-89f4-4854-bc2f-13b0c179ff0c" />
 
 The complete forecast table is exported as:
 
@@ -90,16 +88,17 @@ In the `subject_prediction_plots.ipynb` notebook, we compute the slope of each s
 We select top 5 risers and decliners within each pure/applied math basket:
 
 
-![Pure risers](image-3.png)
-![Pure decliners](image-4.png)
+<img width="989" height="590" alt="image-3" src="https://github.com/user-attachments/assets/4791d764-304d-40e8-b30a-a7accb3f58f6" />
+<img width="989" height="590" alt="image-4" src="https://github.com/user-attachments/assets/7b47a9bf-cca1-4802-9d5c-475023803298" />
 
-![Applied risers](image-5.png)
-![Applied decliners](image-6.png)
+<img width="989" height="590" alt="image-5" src="https://github.com/user-attachments/assets/87e34bf3-d1fd-496d-8a8b-9cb1e0bf52f5" />
+<img width="989" height="590" alt="image-6" src="https://github.com/user-attachments/assets/99f7434e-33c3-459f-8522-7af74a63d685" />
+
 
 In addition, we compute each subject's share among all math subjects, and find the top 5 risers/decliners:
+<img width="989" height="590" alt="image-7" src="https://github.com/user-attachments/assets/01ae7623-808a-4210-b8ae-230c94101d1b" />
+<img width="989" height="590" alt="image-8" src="https://github.com/user-attachments/assets/ff8ae0dc-b764-4db4-9a23-39f51be1e49e" />
 
-![All math risers](image-7.png)
-![All math decliners](image-8.png)
 
 
 ---
