@@ -1,16 +1,43 @@
-# Subject Trend Analysis and Forecasting
+# Subject Trend Analysis
 
-This folder studies how the distribution of mathematics PhD graduates across MSC subject areas has changed over time. The analysis has two stages:
+This folder studies how the distribution of mathematics PhD graduates across MSC subject areas changes over time in the Mathematics Genealogy Project data.
 
-1. exploratory analysis of historical subject trends;
-2. rolling-window cross-validation and forecasting for all pure- and applied-mathematics subjects.
+The analysis focuses on **subject shares**, rather than raw counts, because the number of recorded graduates varies substantially across years. Shares are computed within two broad baskets:
+
+```text
+Pure mathematics:    subject_code < 61
+Applied mathematics: subject_code > 61
+```
+
+The workflow separates model fitting from interpretation:
+
+1. exploratory analysis of historical subject shares;
+2. model selection and short-term prediction;
+3. plotting and trend interpretation using the saved prediction file.
+
+The main forecasting period is **1960–2024**, and forecasts are produced for **2025–2027**. The year 2025 is treated as a provisional comparison point in the plotting notebook. The year 2026 is excluded from provisional plots because the available sample is too small.
+
+---
 
 ## Notebooks
 
-| Notebook                                           | Description                                                               |
-| -------------------------------------------------- | ------------------------------------------------------------------------- |
-| [`subject_EDA.ipynb`](subject_EDA.ipynb)           | Visualizes historical changes in subject counts and percentage shares.    |
-| [`cross_validation.ipynb`](cross_validation.ipynb) | Selects forecasting models and produces coherent forecasts for 2025–2027. |
+| Notebook | Purpose |
+|---|---|
+| `subject_EDA.ipynb` | Exploratory analysis of historical MSC subject counts and shares. |
+| `model_selection_and_predict.ipynb` | Rolling-window cross-validation, model selection, and compact forecast export. |
+| `subject_prediction_plots.ipynb` | Plots forecast results, compares provisional 2025 data, and ranks recent subject risers/decliners. |
+
+Run the notebooks in this order:
+
+```text
+subject_EDA.ipynb
+model_selection_and_predict.ipynb
+subject_prediction_plots.ipynb
+```
+
+The plotting notebook depends on the compact CSV produced by the model-selection notebook.
+
+---
 
 ## Data
 
@@ -20,164 +47,227 @@ The notebooks use:
 data/processed/version2_new_dataset_fitted.csv
 ```
 
-The dataset contains 338,532 mathematicians. The cross-validation notebook retains the 202,492 records with originally observed subject codes and excludes predicted subject assignments. 
+Only records with originally observed subject codes are used for the main analysis. Predicted/imputed subject labels are excluded when the column `predicted_subject_code` is available.
 
-Subjects are divided into two baskets:
+For each year and subject, the notebooks compute:
 
 ```text
-Pure mathematics:    subject_code <= 60
-Applied mathematics: subject_code >= 62
+subject count
+subject share within pure/applied mathematics
+pure/applied basket ratio among all classified mathematics records
 ```
 
-For each subject and year, the analysis calculates:
-
-* the number of PhD graduates;
-* the subject’s percentage share within its pure- or applied-mathematics basket.
-
-Counts measure the absolute size of a subject, while shares measure its relative size within the corresponding basket.
+Working with shares helps reduce the effect of year-to-year changes in the total number of recorded MGP entries.
 
 ---
 
-## 1. Exploratory Data Analysis
+## Model-selection notebook
 
-The EDA notebook constructs subject-by-year count and percentage matrices. A centered five-year rolling average is used to reduce short-term fluctuations.
+`model_selection_and_predict.ipynb` performs rolling-window cross-validation on annual subject-share series from 1960 through 2024.
 
-The main visualizations include:
+The validation design is:
 
-* heatmaps of historical subject shares;
-* trend plots for the largest recent subjects;
-* stacked area charts showing changes in the overall subject distribution.
+```text
+Training window: 20 years
+Forecast horizon: 3 years
+Step size:        3 years
+```
 
-The recent pure-mathematics distribution is led by subjects such as Probability, Partial Differential Equations, Number Theory, Combinatorics, Algebraic Geometry, and Differential Geometry.
+The reduced model set compares a small number of simple forecasting methods:
 
-The applied-mathematics distribution has increasingly shifted toward Computer Science, Statistics, Numerical Analysis, Operations Research, and related modern fields.
+```text
+SES optimized
+Holt damped trend
+ARIMA(0,1,1)
+Auto ARIMA
+```
 
-Early-year percentages are unstable because relatively few graduates are recorded. Apparent declines near the end of the dataset should also be interpreted cautiously because recent Mathematics Genealogy Project records may be incomplete.
+A switch in the notebook can disable Auto ARIMA for a faster three-model version:
+
+```python
+USE_AUTO_ARIMA = False
+```
+
+For each subject, the model with the lowest mean cross-validation MSE receives one vote. Ties are divided equally across tied models. The model with the largest total vote is selected separately for:
+
+```text
+pure-math subject shares
+applied-math subject shares
+pure/applied basket ratio
+```
+
+Final forecasts are fitted using the most recent 20 completed years, 2005–2024.
 
 ---
 
-## 2. Rolling-Window Cross-Validation
+## Compact prediction output
 
-The cross-validation analysis uses annual observations from **1960 through 2024**. We chose this range because the data are more complete and stable during this period.
-
-The main validation design uses:
+The model-selection notebook exports one compact CSV:
 
 ```text
-Training window:   20 years
-Forecast horizon:   3 years
-Step size:          3 years
+outputs/subject_trend_predictions/subject_prediction_forecasts.csv
 ```
 
-Every fold trains on the preceding 20 years and predicts the following three years. One-year and five-year horizons are also examined for Algebraic Geometry.
+This file contains only forecasted values:
 
-Seven forecasting specifications are compared:
+| Column | Meaning |
+|---|---|
+| `record_type` | Either `subject_share_forecast` or `basket_ratio_forecast`. |
+| `basket` | `Pure` or `Applied`. |
+| `subject_code` | Two-digit MSC subject code for subject-share forecasts. |
+| `year` | Forecast year. |
+| `value_percent` | Forecast percentage. |
+| `model` | Selected model used for the forecast. |
 
-1. simple exponential smoothing with fixed alpha = 0.5;
-2. optimized simple exponential smoothing;
-3. optimized Holt linear trend;
-4. damped Holt trend;
-5. linear regression on year;
-6. ARIMA(0,1,1);
-7. Auto ARIMA.
-
-Note that ARIMA(0,1,1) is mathematically equivalent to simple exponential smoothing, and the latter one is performs well in preliminary tests.
-
-Performance is evaluated using MSE, RMSE, MAE, and MASE. Mean MSE is used for final model selection.
-
-### Model Selection Across Subjects
-
-The cross-validation pipeline is applied separately to:
-
-* 44 pure-mathematics subjects;
-* 19 applied-mathematics subjects;
-* annual pure-mathematics basket totals;
-* annual applied-mathematics basket totals.
-
-For each subject, the model with the lowest mean MSE receives one vote. A tied subject divides its vote equally among the tied models.
-
-The selected models are:
-
-| Forecast component          | Selected model |
-| --------------------------- | -------------- |
-| Pure-math subject shares    | Damped Holt    |
-| Applied-math subject shares | ARIMA(0,1,1)   |
-| Pure-math basket total      | Auto ARIMA     |
-| Applied-math basket total   | ARIMA(0,1,1)   |
-
-Direct count forecasts are also evaluated as benchmarks. Fixed-alpha simple exponential smoothing wins the largest number of direct-count series in both baskets. However, direct count models are not used for the final forecasts because independently forecasted subject counts would not necessarily add up to the total number of graduates.
+Historical and provisional observations are not exported. They are reconstructed directly from `version2_new_dataset_fitted.csv` in the plotting notebook. This keeps the output folder small and avoids committing large derived tables.
 
 ---
 
-## 3. Coherent Forecasts for 2025–2027
+## Forecasting logic
 
-The final models are fitted using the most recent 20 years, **2005–2024**, matching the rolling cross-validation window.
+Subject forecasts are computed within each basket. For example, a pure-math subject share is interpreted as
 
-The forecasting procedure is:
+$$
+P(\text{subject}=s \mid \text{pure mathematics}).
+$$
 
-1. Forecast every subject’s percentage share.
-2. Replace negative share forecasts with zero.
-3. Normalize the shares so that they sum to 100% within each basket.
-4. Forecast the total number of pure- and applied-mathematics graduates.
-5. Derive subject counts using
+The pure/applied basket ratio is forecast separately:
 
-```text
-subject count = subject share × basket total / 100
-```
+$$
+P(\text{pure mathematics} \mid \text{all mathematics}),
+\qquad
+P(\text{applied mathematics} \mid \text{all mathematics}).
+$$
 
-This guarantees that:
-
-* both pure-mathematics and shares sum to 100%;
-* derived subject counts sum exactly to their forecasted basket total.
-
-(Note that we still added separate count series prediction in the notebook as a comparison.)
-
-The forecasted pure-mathematics total increases from approximately **1,638 graduates in 2025** to **1,707 in 2027**. The applied-mathematics total remains approximately **1,535 graduates per year** under the selected model.
-
-The five largest forecasted pure-mathematics subjects are:
+This gives a hierarchical decomposition:
 
 ```text
-35 — Partial differential equations
-11 — Number theory
-14 — Algebraic geometry
-60 — Probability theory and stochastic processes
-05 — Combinatorics
+All mathematics
+├── Pure-math basket ratio
+│   └── Subject shares within pure mathematics
+└── Applied-math basket ratio
+    └── Subject shares within applied mathematics
 ```
-Their percentages among pure math subjects are shown below:
 
-<img width="1491" height="790" alt="pure_math_share_predict" src="https://github.com/user-attachments/assets/97d10fbd-03a7-411b-ab09-d9ef611b844b" />
-We predict in 2027, subject 35 has share 10.56%, subject 11 has share 9.18%, subject 14 has share 8.83%, subject 60 has share 8.30%, subject 05 has share 8.29%.
+For a pure subject \(s\), its reconstructed share among all mathematics is
 
-The five largest forecasted applied-mathematics subjects are:
+$$
+P(s \mid \text{all mathematics})
+=
+P(s \mid \text{pure mathematics})
+P(\text{pure mathematics} \mid \text{all mathematics}).
+$$
+
+In percentage form:
+
+$$
+\text{overall subject share}
+=
+\frac{
+\text{within-basket subject share}
+\times
+\text{basket ratio}
+}{100}.
+$$
+
+This makes it possible to distinguish two questions:
+
+1. Is a subject rising within pure or applied mathematics?
+2. Is the subject rising among all mathematics subjects after accounting for the changing pure/applied ratio?
+
+---
+
+## Plotting and trend notebook
+
+`subject_prediction_plots.ipynb` loads:
 
 ```text
-68 — Computer science
-62 — Statistics
-65 — Numerical analysis
-90 — Operations research and mathematical programming
-91 — Game theory, economics, and social sciences
+data/processed/version2_new_dataset_fitted.csv
+outputs/subject_trend_predictions/subject_prediction_forecasts.csv
 ```
-Their percentages among applied math subjects are shown below:
-<img width="1491" height="790" alt="applied_math_counts_predict" src="https://github.com/user-attachments/assets/ce9393e9-e673-4e4a-8315-3226cca22b2c" />
-We predict in 2027, subject 68 has share 32.28%, subject 62 has share 21.76%, subject 65 has share 9.95%, subject 90 has share 6.27%, subject 91 has share 5.36%.
 
-The total number of graduated students forecasts are shown below:
-<img width="1491" height="790" alt="pure_math_counts_predict" src="https://github.com/user-attachments/assets/4d862e08-4b80-4be2-a57d-ba4530ac00b0" />
-<img width="1491" height="790" alt="applied_math_share_predict" src="https://github.com/user-attachments/assets/43d69263-a845-4f9e-95cf-2cc5d348ab7f" />
+It reconstructs historical and provisional shares, then produces:
 
-The complete forecast table is exported as:
+1. pure/applied basket-ratio plots;
+2. top-five largest subjects within each basket;
+3. fastest recent observed risers and decliners within each basket;
+4. reconstructed all-math subject shares;
+5. fastest recent observed risers and decliners among all mathematics;
+6. trajectory plots for the all-math risers and decliners.
+
+The riser/decliner rankings are based on observed data from 2010–2024, not on forecast slopes.
+
+For each subject, the notebook fits a weighted linear trend:
+
+$$
+\text{share}_{s,t}=\alpha_s+\beta_s t+\varepsilon_{s,t}.
+$$
+
+The reported trend is
+
+$$
+10\beta_s,
+$$
+
+interpreted as percentage-point change per decade. Years are weighted by the number of classified records in the relevant basket, or by the total number of classified records for the all-math analysis.
+
+Forecast curves are shown only as visual comparisons. They are not used to define the fastest risers or decliners.
+
+---
+
+## Interpreting the results
+
+The analysis intentionally keeps three ideas separate.
+
+### 1. Within-basket share
+
+This asks:
 
 ```text
-all_subject_share_and_derived_count_forecasts_2025_2027.csv
+Which subjects are gaining or losing share inside pure or applied mathematics?
 ```
-<!--
-## 4. Overall conclusions
 
-Taken together, these four figures suggest that the short-term forecasts are driven more by **continuation of recent structure** than by large changes in ranking.
+For example, a subject may be rising within applied mathematics even if applied mathematics as a whole is shrinking relative to all mathematics.
 
-- In **pure mathematics**, the top subjects remain relatively close to one another, with Subject 35-Partial Differential Equations leading and Subjects 11-Number Theory and 14-Algebraic Geometry gradually strengthening.
-- In **applied mathematics**, Subject 68-Computer Science remains dominant, followed by Subject 62-Statistics, while the remaining top subjects stay much smaller.
-- The forecast horizon is short (2025–2027), so these plots should be interpreted as **near-term extrapolations** rather than long-run predictions.
-- Because the final workflow forecasts shares and totals separately, the resulting count forecasts are internally consistent and easier to interpret than independently forecasted subject counts.
+### 2. Pure/applied basket ratio
 
-These figures therefore provide a compact visual summary of the final forecasting pipeline and its main substantive conclusions.
--->
+This asks:
+
+```text
+Is pure or applied mathematics becoming a larger share of all classified mathematics records?
+```
+
+This ratio is important because it affects every subject's overall-math share.
+
+### 3. All-math subject share
+
+This asks:
+
+```text
+Which subjects are gaining or losing share among all mathematics subjects?
+```
+
+A subject can have different within-basket and all-math trends. For instance, a large applied subject can decline among all mathematics if the applied basket itself declines, even if the subject is stable or slightly rising within applied mathematics.
+
+---
+
+## Notes and cautions
+
+- The forecasts are short-term extrapolations for 2025–2027.
+- The 2025 MGP data are shown only as provisional comparison points.
+- The 2026 data are excluded from provisional plots because the current number of classified records is too small.
+- Recent trends are descriptive and should not be interpreted causally.
+- Subject-share forecasts are normalized so that pure-math shares sum to 100% within pure mathematics, and applied-math shares sum to 100% within applied mathematics.
+- All-math subject shares are reconstructed by combining within-basket subject shares with the pure/applied basket ratio.
+
+---
+
+## Main output
+
+The main file produced by this folder is:
+
+```text
+outputs/subject_trend_predictions/subject_prediction_forecasts.csv
+```
+
+This compact file is enough to reproduce the forecast plots when combined with the original fitted dataset.
