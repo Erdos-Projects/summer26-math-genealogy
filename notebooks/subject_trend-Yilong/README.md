@@ -88,16 +88,16 @@ In the `subject_prediction_plots.ipynb` notebook, we compute the slope of each s
 We select top 5 risers and decliners within each pure/applied math basket:
 
 
-<img width="989" height="590" alt="image-3" src="https://github.com/user-attachments/assets/4791d764-304d-40e8-b30a-a7accb3f58f6" />
-<img width="989" height="590" alt="image-4" src="https://github.com/user-attachments/assets/7b47a9bf-cca1-4802-9d5c-475023803298" />
+<img width="700" height="400" alt="image-3" src="https://github.com/user-attachments/assets/4791d764-304d-40e8-b30a-a7accb3f58f6" />
+<img width="700" height="400" alt="image-4" src="https://github.com/user-attachments/assets/7b47a9bf-cca1-4802-9d5c-475023803298" />
 
-<img width="989" height="590" alt="image-5" src="https://github.com/user-attachments/assets/87e34bf3-d1fd-496d-8a8b-9cb1e0bf52f5" />
-<img width="989" height="590" alt="image-6" src="https://github.com/user-attachments/assets/99f7434e-33c3-459f-8522-7af74a63d685" />
+<img width="700" height="400" alt="image-5" src="https://github.com/user-attachments/assets/87e34bf3-d1fd-496d-8a8b-9cb1e0bf52f5" />
+<img width="700" height="400" alt="image-6" src="https://github.com/user-attachments/assets/99f7434e-33c3-459f-8522-7af74a63d685" />
 
 ---
 In addition, we compute each subject's share among all math subjects, and find the top 5 risers/decliners:
-<img width="989" height="590" alt="image-7" src="https://github.com/user-attachments/assets/01ae7623-808a-4210-b8ae-230c94101d1b" />
-<img width="989" height="590" alt="image-8" src="https://github.com/user-attachments/assets/ff8ae0dc-b764-4db4-9a23-39f51be1e49e" />
+<img width="700" height="400" alt="image-7" src="https://github.com/user-attachments/assets/01ae7623-808a-4210-b8ae-230c94101d1b" />
+<img width="700" height="400" alt="image-8" src="https://github.com/user-attachments/assets/ff8ae0dc-b764-4db4-9a23-39f51be1e49e" />
 
 ---
 Among the top five all-math risers, three are pure-math subjects and two are applied-math subjects. This agrees with the within-basket riser rankings. In contrast, the top five all-math decliners all come from applied math, and this list differs from the top five decliners within the applied-math basket. This occurs because the applied math basket share declines over 2010-2024. For example, subject 68, Computer Science, is the second-largest decliner among all math subjects, even though its share within applied math is approximately flat.
