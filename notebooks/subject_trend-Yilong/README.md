@@ -25,7 +25,7 @@ We use data from **1960–2024**, and forecasts are produced for **2025–2027**
 
 | Notebook | Purpose |
 |---|---|
-| `subject_EDA.ipynb` | Exploratory analysis of historical MSC subject counts and shares. |
+| `subject_coevolution_EDA.ipynb` | Exploratory analysis of historic MSC subject shares, entropy and correlations. |
 | `model_selection_and_predict.ipynb` | Rolling-window cross-validation, model selection, and forecasts. |
 | `subject_prediction_plots.ipynb` | Plots forecast results and ranks recent subject risers/decliners. |
 
