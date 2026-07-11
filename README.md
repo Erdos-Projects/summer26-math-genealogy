@@ -120,23 +120,21 @@ Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that 
 (More details : [notebook/fill-in-subject-Osanda](notebooks/fill-in-subject-Osanda))
 
 
-### Project II. Keyword Trends - 
+### Project II. Keyword Trends
 
 **Question:**
-Within each subject, which thesis-title keywords are rising, and can we predict which will keep trending?
+Can we predict which thesis-title keywords are about to take off in a field, before they do?
 
-**Idea:** 
-New terminology tends to appear in thesis titles before a topic grows large. By tracking each word's yearly usage share within a subject, we can flag words with a low historical base and a steep recent rise, then forecast their near-future share.
+**Idea:**
+New terminology shows up in thesis titles before a topic grows large, so a word climbing from a low base is an early signal. We track each word's share of titles within a subject over time, flag the ones rising fastest, and forecast where they go next.
 
-**Approach:**
-- Tokenize thesis titles per subject and compute each word's share of titles per year
-- Detect rising words from their recent trend (slope on a low base)
-- Frame forecasting as predicting next-year share from lagged usage features
+**What we found:**
+The naive guess, "words trending up keep trending up," is actually worse than a coin flip here (35% direction accuracy): sharp rises tend to revert, not continue. A Ridge model on lagged usage and trend features learns this reversion and calls the direction of change correctly 64% of the time, ranking the true movers with 0.90 NDCG. Applied forward, it produces a per-subject watchlist of rising terms for 2025-2026, which matches the titles already coming in (rank correlation up to 0.99 in the best-covered fields).
 
-**Modeling and evaluation:**
-Baseline is linear regression on lag features. Because this is a time series, the main risk is temporal leakage, so we use a custom time-based split (train on past years, test on future years) rather than a random split.
+**How it's built:**
+Titles are tokenized per subject and aggregated into 2-year bins to smooth data-entry lag. Candidate rising words are chosen by specificity and recent slope, then the model predicts the next period's change in share. Evaluation is a leak-free time split, with candidate selection rebuilt inside each fold so nothing peeks at the future.
 
-More details and notrbooks in [notebooks/keyword_trends](notebooks/keyword_trends)
+More details and notebooks in [notebooks/keyword_trends](notebooks/keyword_trends).
  
 ### Project III. Subject Evolution
 
