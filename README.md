@@ -1,11 +1,15 @@
 # Summer 2026 Math Genealogy Project
 
-This repository contains the data and analysis for the Summer 2026 Mathematics Genealogy Project team project.
-
 ## Problem Statement
 
 1. Study the trend of mathematics in a given field
 2. Predict the research subject (MSC code) of a mathematician depending on their descendants/relatives.
+
+Can data from the Mathematics Genealogy Project reveal early signals of emerging mathematical fields? 
+
+Predicting the trending keywords and subject areas.
+Answering inferential questions based on geographical distribution of data in the US.
+
 
 ## Data Scraping
 
