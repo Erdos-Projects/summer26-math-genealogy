@@ -12,19 +12,20 @@ research areas evolve and to build predictive models from academic lineage data.
 1. **Trend analysis.** Track how activity in a given mathematical field changes
    over time, using MSC codes and associated keywords.
 
-2. **Subject prediction.** Predict a mathematician's research subject (MSC code)
-   from the subjects of their advisors, students, and other relatives in the
-   genealogy graph.
-
-3. **Emerging field detection.** Identify early signals of new or fast growing
+2. **Emerging field detection.** Identify early signals of new or fast growing
    fields by detecting trending keywords and subject areas before they become
    mainstream.
 
-4. **Geographic inference.** Answer inferential questions about the geographical
+3. **Geographic inference.** Answer inferential questions about the geographical
    distribution of mathematical research within the US, such as regional
    concentration of specific subjects.
+4. **Subject prediction.** Predict a mathematician's research subject (MSC code)
+   from the subjects of their advisors, students, and other relatives in the
+   genealogy graph.
 
-## Data Scraping
+## Data   
+
+### Data Scraping
 
 We scraped records from the [Mathematics Genealogy Project](https://www.mathgenealogy.org/) and saved the results in `data/raw/data-new.json`.
 
@@ -36,7 +37,7 @@ The two records that initially produced fetching errors were later manually retr
 
 For scrapping we used a slightly modified version of the script given in https://github.com/j2kun/math-genealogy-scraper.git. The modified code can be found in [src/data/scraper](src/data/scraper).
 
-## Data Cleaning 
+### Data Cleaning 
 
 Each record contains the following fields:
 
@@ -60,7 +61,7 @@ After this initial cleaning, the dataset contains **338,532 records**.
 
 For records missing a `subject` field (136,040 entries, 40.2% of the dataset), we assigned subjects using a classifier, adding two new fields: `predicted_subject_code` and `subject_prediction_confidence`. This expanded subject coverage from 59.8% to 89.2% of all records.
 
-## Dataset Summary
+### Dataset Summary
 
 | Column                          | Data type | Non-null entries | Missing entries | Completeness |
 | ------------------------------- | --------: | ---------------: | --------------: | -----------: |
@@ -80,7 +81,7 @@ For records missing a `subject` field (136,040 entries, 40.2% of the dataset), w
 Note that many `students` entries are missing, but this should be interpreted as the fact that most mathematicians have no students.
 
 
-## Missing-Data Analysis
+### Missing-Data Analysis
 <img width="1413" height="1180" alt="missing-data-analysis" src="https://github.com/user-attachments/assets/1a40540c-ce77-435d-b884-1eb2a927c89d" />
 
 Initial observations include:
