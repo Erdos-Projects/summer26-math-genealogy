@@ -150,3 +150,9 @@ Second, we will use the advisor-student structure of the dataset to study _genea
 ### Project IV. Geography analysis 
 
 Another direction for this project is to study some geographical patterns in mathematical research subjects on the Mathematics Genealogy Project. Because most of the data is focused in the United States, we restrict attention there. In particular, we aim to investigate trends at the State level - how has subject popularity varied between States (and over time). 
+
+We consider first the question of prediction (in the near-term) how subjects will evolve and which states will increase/decrease their proportion of PhDs granted in each subject. We set up a multinomial model to address this. 
+
+We next consider inferential questions - how the distribution of subjects within one state compares to that of other states, and to the national average. We set up a Poisson regression model to address this. 
+
+For more details, see [notebooks/Geography-Jonathan](notebooks/Geography-Jonathan)
