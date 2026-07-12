@@ -72,34 +72,7 @@ Initial observations include:
 2. Records from earlier periods are more likely to have missing `subject` values.
 3. Records with missing `year` values are also more likely to have missing `country` and `thesis` values.
 
-## Basic Analysis of Student Counts
-
-The number of listed students per mathematician has the following summary:
-
-| Statistic                               | Value |
-| --------------------------------------- | ----: |
-| Mean number of students                 |  1.13 |
-| Standard deviation                      |  4.00 |
-| Maximum number of students              |   181 |
-| Mathematicians with no listed students  | 75.5% |
-| Mathematicians with one listed student  | 10.3% |
-| Mathematicians with two listed students |  3.8% |
-
-The distribution is highly right-skewed: most mathematicians have no listed students, while a small number have very large numbers of students.
-
-(may add a few more analysis here if needed)
-
-## Project Proposal
-<!--
-Based on the analysis above, we propose the following four problems/questions:
-I. How to fill in the missing subject code? - Osanda
-
-II. What is the trend of key words in each subject for the next year/decade? - Aaroodd 
-
-III. Which subject will be the next “dominating” subject? - Yilong
-
-IV. How are the subject topics discributed in US states? - Jon
--->
+## Project outline
 ### Project I. Missing Subject Codes/Names Imputation 
 The dataset had 136,040 entries with subject missing. The following missing value imputation procedure has been taken to decrease the number of entries with missing subjects. Every subject comes with a subject code (varying between 0 and 97) and subject name. 
 
@@ -156,3 +129,9 @@ We consider first the question of prediction (in the near-term) how subjects wil
 We next consider inferential questions - how the distribution of subjects within one state compares to that of other states, and to the national average. We set up a Poisson regression model to address this. 
 
 For more details, see [notebooks/Geography-Jonathan](notebooks/Geography-Jonathan)
+
+## Conclusions
+
+## Limitations
+
+## Future work
