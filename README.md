@@ -70,7 +70,7 @@ Initial observations include:
 2. Records from earlier periods are more likely to have missing `subject` values.
 3. Records with missing `year` values are also more likely to have missing `country` and `thesis` values.
    
-## EDA
+## Exploratory Data Analysis
 Please refer to [notebooks/data_visualization](notebooks/data_visualization).
 
 ## Project outline
@@ -146,17 +146,16 @@ For more details, see [notebooks/geographic_distributions](notebooks/geographic_
 
 ## Limitations
 
-- **Incomplete database.** Many records are missing `subject` entries, especially
-  in the early years, which weakens trend estimates for older periods.
-- **US-centric coverage.** The data is mostly focused on the US, so conclusions may
-  not generalize to other countries or global research patterns.
+- **Incomplete database.** Many older records lack Mathematics Subject Classification entries, which makes it difficult to draw statistical conclusions on subjects trends before 1960.
+- **US-centric coverage.** The Mathematics Genealogy Project database is more complete for the United States than for many other countries. So our conclusions should not be generalized to global mathematical research without caution. 
 - **Dissertation count is a proxy.** The number of granted dissertations is only one
   indicator of a subject's size and does not capture publication volume, citations,
   or research impact.
 
 ## Future work
 
-- **Tree structure analysis.** Use the genealogy tree structures, such as advisor and student lineages, to engineer features (for example lineage depth, branching factor, and subtree subject composition) that could improve subject and trend prediction.
+- **Tree structure analysis.** The advisor–student relationships and lineage structures to engineer additional features, such as lineage depth, network centrality, subject-transition probabilities, and Markov-chain dynamics. These features could deepen the analysis of subject evolution and potentially improve trend prediction.
 - **Inferential questions.** Extend the analysis to further inferential questions,
   for example whether specific lineages or institutions drive the emergence of new
   fields.
+- **Integrating the subject-prediction pipeline.** In Project I, missing MSC subject codes were predicted using thesis titles and genealogy information. Although this substantially improves subject coverage, classification errors may affect estimated shares and trends. Our current prodiction models in Project II~IV did not use these predicted results from Project I. A future extension would integrate the imputation pipeline more carefully into the subject- and keyword-trend workflows and evaluate results separately on records with observed subject labels. This would allow us to compare trends based on observed-only data with trends that also include imputed labels and quantify the effect of imputation uncertainty.
