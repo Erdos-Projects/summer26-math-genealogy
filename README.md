@@ -126,23 +126,6 @@ We next consider inferential questions - how the distribution of subjects within
 
 For more details, see [notebooks/geographic_distributions](notebooks/geographic_distributions)
 
-## Conclusions
-We are able to make predictions about keywords trend showing up in thesis titles, short-term of subject trend, and we find there is trend of even distribution of subjects amoung US states.
-
-## Limitations
-- Math Genealogy records are incomplete, especially for earlier periods.
-- Predicted MSC codes introduce classification uncertainty.
-- Recent years, particularly 2025 onward, are provisional and affected by
-  reporting delays.
-- The database primarily records doctoral genealogy and should not be treated
-  as a complete measure of all mathematical research output.
-
-## Future work
-Study the tree structures of the database, study inferential questions
-
-
-
-
 
 ## Conclusions
 
