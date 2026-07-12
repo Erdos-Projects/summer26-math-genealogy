@@ -60,13 +60,18 @@ After this initial cleaning, the dataset contains **338,532 records**.
 
 ### Missing-Data Analysis
 <img width="1413" height="1180" alt="missing-data-analysis" src="https://github.com/user-attachments/assets/1a40540c-ce77-435d-b884-1eb2a927c89d" />
+
 Note that many entries has missing `students`. This should be rather interpreted as the fact that most mathematicians have no students. The largetst missing feature is `subject`.
+
 
 Initial observations include:
 
 1. Missing `year` values are strongly associated with missing `school` values.
 2. Records from earlier periods are more likely to have missing `subject` values.
 3. Records with missing `year` values are also more likely to have missing `country` and `thesis` values.
+   
+## EDA
+Please refer to [notebooks/data_visualization](notebooks/data_visualization).
 
 ## Project outline
 ### Project I. Missing Subject Codes/Names Imputation 
