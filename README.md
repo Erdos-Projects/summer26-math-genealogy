@@ -20,8 +20,7 @@ research areas evolve and to build predictive models from academic lineage data.
    distribution of mathematical research within the US, such as regional
    concentration of specific subjects.
 4. **Subject prediction.** Predict a mathematician's research subject (MSC code)
-   from the subjects of their advisors, students, and other relatives in the
-   genealogy graph.
+   from the subjects of their advisors, students, and thesis title.
 
 ## Data   
 
