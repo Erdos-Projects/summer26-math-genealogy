@@ -161,3 +161,37 @@ We are able to make predictions about keywords trend showing up in thesis titles
 
 ## Future work
 Study the tree structures of the database, study inferential questions
+
+
+
+
+
+## Conclusions
+
+- **Keyword trends in thesis titles.** Our models can predict which keywords are
+  likely to appear in future thesis titles, capturing shifts in how mathematicians
+  describe their work.
+- **Short-term subject trends.** We can forecast near-term changes in subject
+  activity, identifying which MSC areas are growing or declining over the next
+  few years.
+- **Even distribution across US states.** We find a trend toward subjects becoming
+  more evenly spread across US states over time, rather than staying concentrated
+  in a few regions.
+
+## Limitations
+
+- **Incomplete database.** Many records are missing `subject` entries, especially
+  in the early years, which weakens trend estimates for older periods.
+- **US-centric coverage.** The data is mostly focused on the US, so conclusions may
+  not generalize to other countries or global research patterns.
+- **Dissertation count is a proxy.** The number of granted dissertations is only one
+  indicator of a subject's size and does not capture publication volume, citations,
+  or research impact.
+
+## Future work
+
+- **Tree structure analysis.** Study the genealogy tree structures, such as advisor
+  and student lineages, to understand how subjects propagate across generations.
+- **Inferential questions.** Extend the analysis to further inferential questions,
+  for example whether specific lineages or institutions drive the emergence of new
+  fields.
