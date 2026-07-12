@@ -134,5 +134,7 @@ For more details, see [notebooks/Geography-Jonathan](notebooks/Geography-Jonatha
 We are able to make predictions about keywords trend showing up in thesis titles, short-term of subject trend, and we find there is trend of even distribution of subjects amoung US states.
 
 ## Limitations
+The database is incomplete, many missing `subject` entries in the early years, data mostly focused on the US; The number of granted dissertation is only one indicator of the subject size.
 
 ## Future work
+Study the tree structures of the database, study inferential questions
