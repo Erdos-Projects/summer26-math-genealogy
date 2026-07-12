@@ -128,7 +128,7 @@ We consider first the question of prediction (in the near-term) how subjects wil
 
 We next consider inferential questions - how the distribution of subjects within one state compares to that of other states, and to the national average. We set up a Poisson regression model to address this. 
 
-For more details, see [notebooks/Geography-Jonathan](notebooks/Geography-Jonathan)
+For more details, see [notebooks/geographic_distributions](notebooks/geographic_distributions)
 
 ## Conclusions
 We are able to make predictions about keywords trend showing up in thesis titles, short-term of subject trend, and we find there is trend of even distribution of subjects amoung US states.
