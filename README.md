@@ -151,8 +151,7 @@ For more details, see [notebooks/geographic_distributions](notebooks/geographic_
 
 ## Future work
 
-- **Tree structure analysis.** Study the genealogy tree structures, using feature engineering such as advisor
-  and student lineages, to understand how subjects propagate across generations.
+- **Tree structure analysis.** Use the genealogy tree structures, such as advisor and student lineages, to engineer features (for example lineage depth, branching factor, and subtree subject composition) that could improve subject and trend prediction.
 - **Inferential questions.** Extend the analysis to further inferential questions,
   for example whether specific lineages or institutions drive the emergence of new
   fields.
