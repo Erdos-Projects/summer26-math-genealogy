@@ -117,7 +117,7 @@ Pipelines were created using TfidVectorizer and these models. Used StratifiedKFo
 
 Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that c=0.1 gives the best fit (train accuracy = 76.07% test accuracy = 63.34%). Only the subject codes with predication confidence score greater than or equal to 0.55 were kept. For the calculation of confidence score a weight was given for subject codes connected to the ones of descendants and ancestors and prediction probabilities coming from the fitted model.  
 
-(More details : [notebook/fill-in-subject-Osanda](notebooks/fill-in-subject-Osanda))
+(More details : [notebook/missing_subjects](notebooks/missing_subjects))
 
 
 ### Project II. Keyword Trends
