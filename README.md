@@ -2,14 +2,26 @@
 
 ## Problem Statement
 
-1. Study the trend of mathematics in a given field
-2. Predict the research subject (MSC code) of a mathematician depending on their descendants/relatives.
 
-Can data from the Mathematics Genealogy Project reveal early signals of emerging mathematical fields? 
+This project uses the Mathematics Genealogy Project to study how mathematical
+research areas evolve and to build predictive models from academic lineage data.
 
-Predicting the trending keywords and subject areas.
-Answering inferential questions based on geographical distribution of data in the US.
+## Goals
 
+1. **Trend analysis.** Track how activity in a given mathematical field changes
+   over time, using MSC codes and associated keywords.
+
+2. **Subject prediction.** Predict a mathematician's research subject (MSC code)
+   from the subjects of their advisors, students, and other relatives in the
+   genealogy graph.
+
+3. **Emerging field detection.** Identify early signals of new or fast growing
+   fields by detecting trending keywords and subject areas before they become
+   mainstream.
+
+4. **Geographic inference.** Answer inferential questions about the geographical
+   distribution of mathematical research within the US, such as regional
+   concentration of specific subjects.
 
 ## Data Scraping
 
