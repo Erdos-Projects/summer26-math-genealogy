@@ -60,7 +60,7 @@ After this initial cleaning, the dataset contains **338,532 records**.
 
 ### Missing-Data Analysis
 <img width="1413" height="1180" alt="missing-data-analysis" src="https://github.com/user-attachments/assets/1a40540c-ce77-435d-b884-1eb2a927c89d" />
-Note that many entries has missing 'students'. This should be rather interpreted as the fact that most mathematicians have no students. The largetst missing feature is `subject`.
+Note that many entries has missing `students`. This should be rather interpreted as the fact that most mathematicians have no students. The largetst missing feature is `subject`.
 
 Initial observations include:
 
