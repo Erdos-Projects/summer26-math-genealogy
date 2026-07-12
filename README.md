@@ -27,7 +27,7 @@ research areas evolve and to build predictive models from academic lineage data.
 
 ### Data Scraping
 
-We scraped records from the [Mathematics Genealogy Project](https://www.mathgenealogy.org/) and saved the results in `data/raw/data-new.json`.
+We scraped records from the [Mathematics Genealogy Project](https://www.mathgenealogy.org/) and saved the results in `data/raw/data-original.json`.
 
 * Original scraped records: **338,530**
 * Approximate JSON file size: **129.9 MB**
@@ -108,7 +108,7 @@ Pipelines were created using TfidVectorizer and these models. Used StratifiedKFo
 
 Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that c=0.1 gives the best fit (train accuracy = 76.07% test accuracy = 63.34%). Only the subject codes with predication confidence score greater than or equal to 0.55 were kept. For the calculation of confidence score a weight was given for subject codes connected to the ones of descendants and ancestors and prediction probabilities coming from the fitted model.  
 
-(More details : [notebook/missing_subjects](notebooks/missing_subjects))
+(More details : [notebooks/missing_subjects](notebooks/missing_subjects))
 
 
 ### Project II. Keyword Trends
