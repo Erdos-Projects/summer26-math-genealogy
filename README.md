@@ -59,28 +59,6 @@ During the initial cleaning process, we:
 
 After this initial cleaning, the dataset contains **338,532 records**.
 
-For records missing a `subject` field (136,040 entries, 40.2% of the dataset), we assigned subjects using a classifier, adding two new fields: `predicted_subject_code` and `subject_prediction_confidence`. This expanded subject coverage from 59.8% to 89.2% of all records.
-
-### Dataset Summary
-
-| Column                          | Data type | Non-null entries | Missing entries | Completeness |
-| ------------------------------- | --------: | ---------------: | --------------: | -----------: |
-| `id`                            |   integer |          338,532 |               0 |       100.0% |
-| `name`                          |    string |          338,526 |               6 |       100.0% |
-| `thesis`                        |    string |          307,399 |          31,133 |        90.8% |
-| `school`                        |    string |          276,167 |          62,365 |        81.6% |
-| `country`                       |    string |          322,986 |          15,546 |        95.4% |
-| `year`                          |     float |          277,237 |          61,295 |        81.9% |
-| `subject_code`                  |    string |          302,106 |          36,426 |        89.2% |
-| `subject_name`                  |    string |          302,106 |          36,426 |        89.2% |
-| `predicted_subject_code`        |    string |          133,502 |         205,030 |        39.4% |
-| `subject_prediction_confidence` |     float |          136,040 |         202,492 |        40.2% |
-| `advisors`                      |      list |          312,066 |          26,466 |        92.2% |
-| `students`                      |      list |           82,914 |         255,618 |        24.5% |
-
-Note that many `students` entries are missing, but this should be interpreted as the fact that most mathematicians have no students.
-
-
 ### Missing-Data Analysis
 <img width="1413" height="1180" alt="missing-data-analysis" src="https://github.com/user-attachments/assets/1a40540c-ce77-435d-b884-1eb2a927c89d" />
 
