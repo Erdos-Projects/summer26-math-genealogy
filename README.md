@@ -2,11 +2,12 @@
 
 ## Problem Statement
 
+**Can data from the Mathematics Genealogy Project reveal early signals of emerging mathematical fields?**
 
 This project uses the Mathematics Genealogy Project to study how mathematical
 research areas evolve and to build predictive models from academic lineage data.
 
-## Goals
+### Goals
 
 1. **Trend analysis.** Track how activity in a given mathematical field changes
    over time, using MSC codes and associated keywords.
