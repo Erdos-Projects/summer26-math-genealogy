@@ -1,5 +1,8 @@
-# Summer 2026 Math Genealogy Project
+<h2 align="center">Where Is Mathematics Going?</h2>
+<p align="right"><i>Early signals from thesis titles, subject trends, and geography</i></p>
 
+
+**Project members:** Jonathan Cohen · Osanda Illeperuma · Aaroodd Ujjayini Ramachandran · Yilong Zhang
 ## Problem Statement
 
 **Can data from the Mathematics Genealogy Project reveal early signals of emerging mathematical fields?**
