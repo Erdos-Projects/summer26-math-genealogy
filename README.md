@@ -117,7 +117,9 @@ This project aims to study the long-term changes in mathematical research subjec
 
 First, we analyzed _subject trend_. For each year, we calculate each MSC subject’s percentage of all classified mathematics dissertations. We also group subjects into pure and applied baskets for selected comparisons, and use these shares to study changes in subject rankings. For each subject, we model annual shares from 1960–2024 as a time series. Historical cross-validation selects among forecasting methods, including Damped Holt and ARIMA(0,1,1), and we produce short-term forecasts for 2025–2027. We compare current share with the weighted 2010–2024 slope, showing that a large field is not necessarily a growing field.
 ### III-B. Genealogical Subject Transitions
-Second, we will use the advisor-student structure of the dataset to study _genealogical transmission_ between subjects. We construct decade-specific advisor-to-student transition matrices and study self-retention, cross-subject flows, two-generation transitions, and spectral persistence. For more details, see [notebooks/subject_trends](notebooks/subject_trends)
+Second, we will use the advisor-student structure of the dataset to study _genealogical transmission_ between subjects. We construct decade-specific advisor-to-student transition matrices and study self-retention, cross-subject flows, two-generation transitions, and spectral persistence. 
+
+For more details, see [notebooks/subject_trends](notebooks/subject_trends)
 
 
 ### Project IV. Geography analysis 
