@@ -34,7 +34,7 @@ We scraped records from the [Mathematics Genealogy Project](https://www.mathgene
 
 The two records that initially produced fetching errors were later manually retrieved and added to the dataset.
 
-For scrapping we used a slightly modified version of the script given in https://github.com/j2kun/math-genealogy-scraper.git. The modified code can be found in [src/data/scraper](src/data/scraper).
+For scraping we used a slightly modified version of the script given in https://github.com/j2kun/math-genealogy-scraper.git. The modified code can be found in [src/data/scraper](src/data/scraper).
 
 ### Data Cleaning 
 
@@ -61,7 +61,7 @@ After this initial cleaning, the dataset contains **338,532 records**.
 ### Missing-Data Analysis
 <img width="1413" height="1180" alt="missing-data-analysis" src="https://github.com/user-attachments/assets/1a40540c-ce77-435d-b884-1eb2a927c89d" />
 
-Note that many entries has missing `students`. This should be rather interpreted as the fact that most mathematicians have no students. The largetst missing feature is `subject`.
+Note that many entries have missing `students`. This should be rather interpreted as the fact that most mathematicians have no students. The largest missing feature is `subject`.
 
 
 Initial observations include:
@@ -77,7 +77,7 @@ Please refer to [notebooks/data_visualization](notebooks/data_visualization).
 ### Project I. Missing Subject Codes/Names Imputation 
 The dataset had 136,040 entries with subject missing. The following missing value imputation procedure has been taken to decrease the number of entries with missing subjects. Every subject comes with a subject code (varying between 0 and 97) and subject name. 
 
-First, every ID in the dataset either have ancestors or descendants. The subject code/name can be connected upto some extend based on these connections. For some IDs this doesn't work as the subject codes of ancestors or descendants are missing. Therefore, a subject code prediction based on the key words in thesis title was carried out. 
+First, each record in the dataset may have either ancestors or descendants. The subject code/name can be connected to some extend based on these connections. For some IDs this doesn't work as the subject codes of ancestors or descendants are missing. Therefore, a subject code prediction based on the keywords in thesis title was carried out. 
 
 Following models were selected for the initial evaluation. 
    - LogisticRegression
@@ -89,7 +89,7 @@ Pipelines were created using TfidVectorizer and these models. Used StratifiedKFo
 
 <img width="1301" height="177" alt="image" src="https://github.com/user-attachments/assets/aef65fb6-d718-4969-9331-f37a56c1989a" />
 
-Hyperparameter tuning for LinearSVC was done using GrideSearchCV and found that c=0.1 gives the best fit (train accuracy = 76.07% test accuracy = 63.34%). Only the subject codes with predication confidence score greater than or equal to 0.55 were kept. For the calculation of confidence score a weight was given for subject codes connected to the ones of descendants and ancestors and prediction probabilities coming from the fitted model.  
+Hyperparameter tuning for LinearSVC was done using GridSearchCV and found that `c=0.1` gives the best fit (train accuracy = 76.07% test accuracy = 63.34%). Only the subject codes with prediction confidence score greater than or equal to 0.55 were kept. For the calculation of confidence score a weight was given for subject codes connected to the ones of descendants and ancestors and prediction probabilities coming from the fitted model.  
 
 (More details : [notebooks/missing_subjects](notebooks/missing_subjects))
 
@@ -113,15 +113,16 @@ More details and notebooks in [notebooks/keyword_trends](notebooks/keyword_trend
 ### Project III. Subject Evolution
 
 This project aims to study the long-term changes in mathematical research subjects through the Mathematics Genealogy Project. Instead of only asking which subjects have the largest raw number of students, we aim to understand how subjects emerge, become dominant, decline, and interact with one another through academic genealogy. We focus on subject shares rather than raw dissertation counts, since the total number of recorded dissertations varies substantially from year to year. Using shares makes comparisons across time more meaningful.
+### III-A. Subject Trends and Forecasting
 
 First, we analyzed _subject trend_. For each year, we calculate each MSC subject’s percentage of all classified mathematics dissertations. We also group subjects into pure and applied baskets for selected comparisons, and use these shares to study changes in subject rankings. For each subject, we model annual shares from 1960–2024 as a time series. Historical cross-validation selects among forecasting methods, including Damped Holt and ARIMA(0,1,1), and we produce short-term forecasts for 2025–2027. In addition, we used weighted least square method to find the slope of the share series in recent years and find rising/declining subjects.
-
-Second, we will use the advisor-student structure of the dataset to study _genealogical transmission_ between subjects. We constructed a $63 \times 63$ transition matrix, where each entry measures how often advisors in one subject produce students in another subject. This can also be computed over different time windows to see how field transitions change historically. From this matrix, we compute self-retention rankings, net inflow and outflow rankings, top migration flows between subjects, and persistence of subjects across multiple generations. More details see [notebooks/subject_trends](notebooks/subject_trends)
+### III-B. Genealogical Subject Transitions
+Second, we will use the advisor-student structure of the dataset to study _genealogical transmission_ between subjects. We constructed a $63 \times 63$ transition matrix, where each entry measures how often advisors in one subject produce students in another subject. This can also be computed over different time windows to see how field transitions change historically. From this matrix, we compute self-retention rankings, net inflow and outflow rankings, top migration flows between subjects, and persistence of subjects across multiple generations. For more details, see [notebooks/subject_trends](notebooks/subject_trends)
 
 
 ### Project IV. Geography analysis 
 
-Another direction for this project is to study some geographical patterns in mathematical research subjects on the Mathematics Genealogy Project. Because most of the data is focused in the United States, we restrict attention there. In particular, we aim to investigate trends at the State level - how has subject popularity varied between States (and over time). 
+Another direction for this project is to study some geographical patterns in mathematical research subjects on the Mathematics Genealogy Project. Because most of the data is focused in the United States, we restrict attention there. In particular, we aim to investigate trends at the state level - how has subject popularity varied between States (and over time). 
 
 We consider first the question of prediction (in the near-term) how subjects will evolve and which states will increase/decrease their proportion of PhDs granted in each subject. We set up a multinomial model to address this. 
 
