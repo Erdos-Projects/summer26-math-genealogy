@@ -31,3 +31,5 @@ So we can use the eigenvalues to detect the "retention rate" among all math fiel
 Row and column normalizations are related by Bayes’ rule:
 
 $$P(A=i|S=j)=\frac{P(S=j|A=i)P(A=i)}{P(S=j)}$$
+
+Our goal is to understand what do these matrices say about subject transitions.
