@@ -69,10 +69,7 @@ After this initial cleaning, the dataset contains **338,532 records**.
 ### Missing-Data Analysis
 <img width="1413" height="1180" alt="missing-data-analysis" src="https://github.com/user-attachments/assets/1a40540c-ce77-435d-b884-1eb2a927c89d" />
 
-Note that many entries have missing `students`. This should be rather interpreted as the fact that most mathematicians have no students. The largest missing feature is `subject`.
-
-
-Initial observations include:
+Note that many entries have missing `students`. This should be rather interpreted as the fact that most mathematicians have no students. The largest missing feature is `subject`. Additional observations include:
 
 1. Missing `year` values are strongly associated with missing `school` values.
 2. Records from earlier periods are more likely to have missing `subject` values.
@@ -81,8 +78,8 @@ Initial observations include:
 ## Exploratory Data Analysis
 Please refer to [notebooks/data_visualization](notebooks/data_visualization).
 
-## Project outline
-### Project I. Missing Subject Codes/Names Imputation 
+## Project Outline
+### Project I. Missing Subject Imputation 
 The dataset had 136,040 entries with subject missing. The following missing value imputation procedure has been taken to decrease the number of entries with missing subjects. Every subject comes with a subject code (varying between 0 and 97) and subject name. 
 
 First, each record in the dataset may have either ancestors or descendants. The subject code/name can be connected to some extend based on these connections. For some IDs this doesn't work as the subject codes of ancestors or descendants are missing. Therefore, a subject code prediction based on the keywords in thesis title was carried out. 
@@ -125,12 +122,12 @@ This project aims to study the long-term changes in mathematical research subjec
 
 First, we analyzed _subject trend_. For each year, we calculate each MSC subject’s percentage of all classified mathematics dissertations. We also group subjects into pure and applied baskets for selected comparisons, and use these shares to study changes in subject rankings. For each subject, we model annual shares from 1960–2024 as a time series. Historical cross-validation selects among forecasting methods, including Damped Holt and ARIMA(0,1,1), and we produce short-term forecasts for 2025–2027. We compare current share with the weighted 2010–2024 slope, showing that a large field is not necessarily a growing field.
 ### III-B. Genealogical Subject Transitions
-Second, we will use the advisor-student structure of the dataset to study _genealogical transmission_ between subjects. We construct decade-specific advisor-to-student transition matrices and study self-retention, cross-subject flows, two-generation transitions, and spectral persistence. 
+Second, we use the advisor-student structure of the dataset to study _genealogical transmission_ between subjects. We construct advisor-to-student transition matrices based on time series and study self-retention, cross-subject flows, and studies matrix analysis properties, like spectral radius, modulus of the second eigenvalues, etc, and describe their changes over each decades.
 
 For more details, see [notebooks/subject_trends](notebooks/subject_trends)
 
 
-### Project IV. Geography analysis 
+### Project IV. Geography Analysis 
 
 Another direction for this project is to study some geographical patterns in mathematical research subjects on the Mathematics Genealogy Project. Because most of the data is focused in the United States, we restrict attention there. In particular, we aim to investigate trends at the state level - how has subject popularity varied between States (and over time). 
 
@@ -149,13 +146,13 @@ For more details, see [notebooks/geographic_distributions](notebooks/geographic_
 - **Short-term subject trends.** We can forecast near-term changes in subject
   activity, identifying which MSC areas are growing or declining over the next
   few years.
-- **Even distribution across US states.** We find a trend toward subjects becoming
+- **Declining geographic concentration.** We find a trend toward subjects becoming
   more evenly spread across US states over time, rather than staying concentrated
   in a few regions.
 
 ## Limitations
 
-- **Incomplete database.** Many older records lack Mathematics Subject Classification entries, which makes it difficult to draw statistical conclusions on subjects trends before 1960.
+- **Incomplete database.** Many older records lack Mathematics Subject Classification entries, which makes it difficult to draw statistical conclusions on subject trends before 1960.
 - **US-centric coverage.** The Mathematics Genealogy Project database is more complete for the United States than for many other countries. So our conclusions should not be generalized to global mathematical research without caution. 
 - **Dissertation count is a proxy.** The number of granted dissertations is only one
   indicator of a subject's size and does not capture publication volume, citations,
@@ -163,7 +160,7 @@ For more details, see [notebooks/geographic_distributions](notebooks/geographic_
 
 ## Future work
 
-- **Tree structure analysis.** The advisor–student relationships and lineage structures to engineer additional features, such as lineage depth, network centrality, subject-transition probabilities, and Markov-chain dynamics. These features could deepen the analysis of subject evolution and potentially improve trend prediction.
+- **Tree structure analysis.** Use advisor–student relationships and lineage structures to engineer additional features, such as lineage depth, network centrality, subject-transition probabilities, and Markov-chain dynamics. These features could deepen the analysis of subject evolution and potentially improve trend prediction.
 - **Inferential questions.** Extend the analysis to further inferential questions,
   for example whether specific lineages or institutions drive the emergence of new
   fields.
